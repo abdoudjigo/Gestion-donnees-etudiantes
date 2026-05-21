@@ -1,0 +1,1012 @@
+[
+  {
+    "code": "AAD003",
+    "numero": "2014079LH",
+    "nom": "CISSE",
+    "prenom": "Baba",
+    "date_naissance": "16/08/1999",
+    "classe": "6emeA",
+    "notes": "{'Math': {'devoirs': [11.0, 13.0], 'examen': 6.0, 'moyenne': 8.0}, 'Francais': {'devoirs': [8.0, 17.0], 'examen': 12.0, 'moyenne': 12.17}, 'Anglais': {'devoirs': [13.0, 13.0], 'examen': 12.0, 'moyenne': 12.33}, 'PC': {'devoirs': [9.0, 18.0], 'examen': 7.0, 'moyenne': 9.17}, 'SVT': {'devoirs': [15.0, 10.0], 'examen': 10.0, 'moyenne': 10.83}, 'HG': {'devoirs': [14.0, 19.0], 'examen': 17.0, 'moyenne': 16.83}}",
+    "erreurs": "{'numero': \"'2014079LH' → Longueur invalide (9 au lieu de 7)\"}"
+  },
+  {
+    "code": "AAD003",
+    "numero": "2016023LD",
+    "nom": "NDIAYE",
+    "prenom": "mbaye",
+    "date_naissance": "12/09/2000",
+    "classe": "5emeA",
+    "notes": "{'Math': {'devoirs': [5.0, 13.0], 'examen': 5.0, 'moyenne': 6.33}, 'Francais': {'devoirs': [11.0, 17.0], 'examen': 15.0, 'moyenne': 14.67}, 'Anglais': {'devoirs': [19.0, 14.0], 'examen': 15.0, 'moyenne': 15.5}, 'PC': {'devoirs': [13.0, 11.0], 'examen': 7.0, 'moyenne': 8.67}, 'SVT': {'devoirs': [12.0, 9.0], 'examen': 12.0, 'moyenne': 11.5}, 'HG': {'devoirs': [16.0, 15.0], 'examen': 17.0, 'moyenne': 16.5}}",
+    "erreurs": "{'numero': \"'2016023LD' → Longueur invalide (9 au lieu de 7)\"}"
+  },
+  {
+    "code": "AAD003",
+    "numero": "286325HG",
+    "nom": "GAYE",
+    "prenom": "Awa",
+    "date_naissance": "13/04/2012",
+    "classe": "3emeA",
+    "notes": "{'Math': {'devoirs': [4.0, 13.0], 'examen': 5.0, 'moyenne': 6.17}, 'Francais': {'devoirs': [15.0, 6.0], 'examen': 11.0, 'moyenne': 10.83}, 'Anglais': {'devoirs': [15.0, 13.0], 'examen': 13.0, 'moyenne': 13.33}, 'PC': {'devoirs': [14.0, 13.0], 'examen': 7.0, 'moyenne': 9.17}, 'SVT': {'devoirs': [12.0, 19.0], 'examen': 10.0, 'moyenne': 11.83}, 'HG': {'devoirs': [18.0, 15.0], 'examen': 17.0, 'moyenne': 16.83}}",
+    "erreurs": "{'numero': \"'286325HG' → Longueur invalide (8 au lieu de 7)\"}"
+  },
+  {
+    "code": "AAD003",
+    "numero": "201817JK",
+    "nom": "NDAO",
+    "prenom": "Ndiaga",
+    "date_naissance": "12/04/2000",
+    "classe": "6emeB",
+    "notes": "{'Math': {'devoirs': [4.0, 13.0], 'examen': 5.0, 'moyenne': 6.17}, 'Francais': {'devoirs': [15.0, 16.0], 'examen': 14.0, 'moyenne': 14.5}, 'Anglais': {'devoirs': [15.0, 16.0], 'examen': 11.0, 'moyenne': 12.5}, 'PC': {'devoirs': [4.0, 3.0], 'examen': 7.0, 'moyenne': 5.83}, 'SVT': {'devoirs': [12.0, 9.0], 'examen': 11.0, 'moyenne': 10.83}, 'HG': {'devoirs': [16.0, 15.0], 'examen': 10.0, 'moyenne': 11.83}}",
+    "erreurs": "{'numero': \"'201817JK' → Longueur invalide (8 au lieu de 7)\"}"
+  },
+  {
+    "code": "AAD003",
+    "numero": "65281LKJ",
+    "nom": "DEME",
+    "prenom": "Saliou",
+    "date_naissance": "19/03/2005",
+    "classe": "5emeB",
+    "notes": "{'Math': {'devoirs': [20.0, 19.5], 'examen': 5.0, 'moyenne': 9.92}, 'Francais': {'devoirs': [13.0, 16.0], 'examen': 14.0, 'moyenne': 14.17}, 'Anglais': {'devoirs': [17.0, 19.0], 'examen': 17.0, 'moyenne': 17.33}, 'PC': {'devoirs': [14.0, 13.0], 'examen': 17.0, 'moyenne': 15.83}, 'SVT': {'devoirs': [12.0, 19.0], 'examen': 10.0, 'moyenne': 11.83}, 'HG': {'devoirs': [16.0, 19.0], 'examen': 17.0, 'moyenne': 17.17}}",
+    "erreurs": "{'numero': \"'65281LKJ' → Longueur invalide (8 au lieu de 7)\"}"
+  },
+  {
+    "code": "AAD003",
+    "numero": "2007095KH",
+    "nom": "Ngadeu",
+    "prenom": "Dinka",
+    "date_naissance": "03/12/2001",
+    "classe": "3emeB",
+    "notes": "{'Math': {'devoirs': [12.0, 13.0], 'examen': 15.0, 'moyenne': 14.17}, 'Francais': {'devoirs': [5.0, 18.0], 'examen': 12.0, 'moyenne': 11.83}, 'Anglais': {'devoirs': [12.0, 14.0], 'examen': 18.0, 'moyenne': 16.33}, 'PC': {'devoirs': [24.0, 13.0], 'examen': 7.0, 'moyenne': 10.83}, 'SVT': {'devoirs': [17.0, 9.0], 'examen': 12.0, 'moyenne': 12.33}, 'HG': {'devoirs': [16.0, 15.0], 'examen': 17.0, 'moyenne': 16.5}}",
+    "erreurs": "{'numero': \"'2007095KH' → Longueur invalide (9 au lieu de 7)\"}"
+  },
+  {
+    "code": "AAD003",
+    "numero": "201607RK",
+    "nom": "BA",
+    "prenom": "Mouhamed",
+    "date_naissance": "19/06/1996",
+    "classe": "4emeC",
+    "notes": "{'Math': {'devoirs': [4.0, 3.0], 'examen': 5.0, 'moyenne': 4.5}, 'Francais': {'devoirs': [15.0, 16.0], 'examen': 14.0, 'moyenne': 14.5}, 'Anglais': {'devoirs': [15.0, 16.0], 'examen': 14.0, 'moyenne': 14.5}, 'PC': {'devoirs': [4.0, 3.0], 'examen': 7.0, 'moyenne': 5.83}, 'SVT': {'devoirs': [12.0, 9.0], 'examen': 15.0, 'moyenne': 13.5}, 'HG': {'devoirs': [16.0, 15.0], 'examen': 13.0, 'moyenne': 13.83}}",
+    "erreurs": "{'numero': \"'201607RK' → Longueur invalide (8 au lieu de 7)\"}"
+  },
+  {
+    "code": "AAD003",
+    "numero": "2014067K",
+    "nom": "GUEYE",
+    "prenom": "Mansour",
+    "date_naissance": "34-13-1992",
+    "classe": "4emeC",
+    "notes": "{'Math': {'devoirs': [14.0, 12.0], 'examen': 15.0, 'moyenne': 14.33}, 'Francais': {'devoirs': [18.0, 6.0], 'examen': 14.0, 'moyenne': 13.33}, 'Anglais': {'devoirs': [15.0, 12.0], 'examen': 12.0, 'moyenne': 12.5}, 'PC': {'devoirs': [18.0, 13.0], 'examen': 7.0, 'moyenne': 9.83}, 'SVT': {'devoirs': [11.0, 19.0], 'examen': 12.0, 'moyenne': 13.0}, 'HG': {'devoirs': [13.0, 15.0], 'examen': 12.0, 'moyenne': 12.67}}",
+    "erreurs": "{'numero': \"'2014067K' → Longueur invalide (8 au lieu de 7)\", 'date_naissance': \"'34-13-1992' → Format de date non reconnu : '34-13-1992'\"}"
+  },
+  {
+    "code": "AAD003",
+    "numero": "20133HGF",
+    "nom": "DANSOKHO",
+    "prenom": "Siriman",
+    "date_naissance": "13/04/2010",
+    "classe": "6emeC",
+    "notes": "{'Math': {'devoirs': [4.0, 3.0], 'examen': 5.0, 'moyenne': 4.5}, 'Francais': {'devoirs': [15.0, 15.0], 'examen': 14.0, 'moyenne': 14.33}, 'Anglais': {'devoirs': [15.0, 6.0], 'examen': 15.0, 'moyenne': 13.5}, 'PC': {'devoirs': [14.0, 6.0], 'examen': 7.0, 'moyenne': 8.0}, 'SVT': {'devoirs': [18.0, 9.0], 'examen': 15.0, 'moyenne': 14.5}, 'HG': {'devoirs': [11.0, 15.0], 'examen': 12.0, 'moyenne': 12.33}}",
+    "erreurs": "{'numero': \"'20133HGF' → Longueur invalide (8 au lieu de 7)\"}"
+  },
+  {
+    "code": "AAD003",
+    "numero": "2017ZEA5L",
+    "nom": "TOURE",
+    "prenom": "Sokhna",
+    "date_naissance": "23/04/2014",
+    "classe": "3emeC",
+    "notes": "{'Math': {'devoirs': [14.0, 13.0], 'examen': 5.0, 'moyenne': 7.83}, 'Francais': {'devoirs': [18.0, 16.0], 'examen': 14.0, 'moyenne': 15.0}, 'Anglais': {'devoirs': [15.0, 6.0], 'examen': 17.0, 'moyenne': 14.83}, 'PC': {'devoirs': [14.0, 13.0], 'examen': 7.0, 'moyenne': 9.17}, 'SVT': {'devoirs': [18.0, 12.0], 'examen': 16.0, 'moyenne': 15.67}, 'HG': {'devoirs': [13.0, 15.0], 'examen': 13.0, 'moyenne': 13.33}}",
+    "erreurs": "{'numero': \"'2017ZEA5L' → Longueur invalide (9 au lieu de 7)\"}"
+  },
+  {
+    "code": "AAD004",
+    "numero": "",
+    "nom": "",
+    "prenom": "",
+    "date_naissance": "None",
+    "classe": "",
+    "notes": "",
+    "erreurs": "{'numero': \"'' → Longueur invalide (0 au lieu de 7)\", 'nom': \"'' → Le nom doit être une chaîne non vide\", 'prenom': \"'' → Le prénom doit être une chaîne non vide\", 'date_naissance': \"'None' → Date manquante\", 'classe': \"'' → Classe manquante\", 'notes': 'Notes manquantes'}"
+  },
+  {
+    "code": "AAD004",
+    "numero": "",
+    "nom": "",
+    "prenom": "",
+    "date_naissance": "None",
+    "classe": "",
+    "notes": "",
+    "erreurs": "{'numero': \"'' → Longueur invalide (0 au lieu de 7)\", 'nom': \"'' → Le nom doit être une chaîne non vide\", 'prenom': \"'' → Le prénom doit être une chaîne non vide\", 'date_naissance': \"'None' → Date manquante\", 'classe': \"'' → Classe manquante\", 'notes': 'Notes manquantes'}"
+  },
+  {
+    "code": "AAD004",
+    "numero": "",
+    "nom": "",
+    "prenom": "",
+    "date_naissance": "None",
+    "classe": "",
+    "notes": "",
+    "erreurs": "{'numero': \"'' → Longueur invalide (0 au lieu de 7)\", 'nom': \"'' → Le nom doit être une chaîne non vide\", 'prenom': \"'' → Le prénom doit être une chaîne non vide\", 'date_naissance': \"'None' → Date manquante\", 'classe': \"'' → Classe manquante\", 'notes': 'Notes manquantes'}"
+  },
+  {
+    "code": "AAD004",
+    "numero": "",
+    "nom": "",
+    "prenom": "",
+    "date_naissance": "None",
+    "classe": "",
+    "notes": "",
+    "erreurs": "{'numero': \"'' → Longueur invalide (0 au lieu de 7)\", 'nom': \"'' → Le nom doit être une chaîne non vide\", 'prenom': \"'' → Le prénom doit être une chaîne non vide\", 'date_naissance': \"'None' → Date manquante\", 'classe': \"'' → Classe manquante\", 'notes': 'Notes manquantes'}"
+  },
+  {
+    "code": "AAD004",
+    "numero": "JD7LO99",
+    "nom": "SOW",
+    "prenom": "Mariama",
+    "date_naissance": "12/18/2017",
+    "classe": "4emeB",
+    "notes": "{'Math': {'devoirs': [4.0, 3.0], 'examen': 5.0, 'moyenne': 4.5}, 'Francais': {'devoirs': [15.0, 16.0], 'examen': 14.0, 'moyenne': 14.5}, 'Anglais': {'devoirs': [15.0, 16.0], 'examen': 17.0, 'moyenne': 16.5}, 'PC': {'devoirs': [4.0, 3.0], 'examen': 7.0, 'moyenne': 5.83}, 'SVT': {'devoirs': [12.0, 9.0], 'examen': 10.0, 'moyenne': 10.17}, 'HG': {'devoirs': [16.0, 15.0], 'examen': 17.0, 'moyenne': 16.5}}",
+    "erreurs": "{'date_naissance': \"'12/18/2017' → Format de date non reconnu : '12/18/2017'\"}"
+  },
+  {
+    "code": "AAD004",
+    "numero": "",
+    "nom": "",
+    "prenom": "",
+    "date_naissance": "None",
+    "classe": "",
+    "notes": "",
+    "erreurs": "{'numero': \"'' → Longueur invalide (0 au lieu de 7)\", 'nom': \"'' → Le nom doit être une chaîne non vide\", 'prenom': \"'' → Le prénom doit être une chaîne non vide\", 'date_naissance': \"'None' → Date manquante\", 'classe': \"'' → Classe manquante\", 'notes': 'Notes manquantes'}"
+  },
+  {
+    "code": "AAD004",
+    "numero": "",
+    "nom": "",
+    "prenom": "",
+    "date_naissance": "None",
+    "classe": "",
+    "notes": "",
+    "erreurs": "{'numero': \"'' → Longueur invalide (0 au lieu de 7)\", 'nom': \"'' → Le nom doit être une chaîne non vide\", 'prenom': \"'' → Le prénom doit être une chaîne non vide\", 'date_naissance': \"'None' → Date manquante\", 'classe': \"'' → Classe manquante\", 'notes': 'Notes manquantes'}"
+  },
+  {
+    "code": "AAD004",
+    "numero": "",
+    "nom": "",
+    "prenom": "",
+    "date_naissance": "None",
+    "classe": "",
+    "notes": "",
+    "erreurs": "{'numero': \"'' → Longueur invalide (0 au lieu de 7)\", 'nom': \"'' → Le nom doit être une chaîne non vide\", 'prenom': \"'' → Le prénom doit être une chaîne non vide\", 'date_naissance': \"'None' → Date manquante\", 'classe': \"'' → Classe manquante\", 'notes': 'Notes manquantes'}"
+  },
+  {
+    "code": "AAD004",
+    "numero": "",
+    "nom": "",
+    "prenom": "",
+    "date_naissance": "None",
+    "classe": "",
+    "notes": "",
+    "erreurs": "{'numero': \"'' → Longueur invalide (0 au lieu de 7)\", 'nom': \"'' → Le nom doit être une chaîne non vide\", 'prenom': \"'' → Le prénom doit être une chaîne non vide\", 'date_naissance': \"'None' → Date manquante\", 'classe': \"'' → Classe manquante\", 'notes': 'Notes manquantes'}"
+  },
+  {
+    "code": "AAD22",
+    "numero": "LSNP5Of",
+    "nom": "Sow",
+    "prenom": "Mari",
+    "date_naissance": "28/12/2001",
+    "classe": "6emeA",
+    "notes": "{'Math': {'devoirs': [10.0, 11.0], 'examen': 15.0, 'moyenne': 13.5}, 'Francais': {'devoirs': [7.0, 12.0, 8.0], 'examen': 13.0, 'moyenne': 11.67}, 'Anglais': {'devoirs': [13.5, 9.0], 'examen': 15.0, 'moyenne': 13.75}, 'PC': {'devoirs': [11.0], 'examen': 9.0, 'moyenne': 9.67}, 'SVT': {'devoirs': [12.0, 9.0, 16.0, 11.0], 'examen': 12.0, 'moyenne': 12.0}, 'HG': {'devoirs': [10.0], 'examen': 13.0, 'moyenne': 12.0}}",
+    "erreurs": "{'code': \"'AAD22' → Longueur invalide (5 au lieu de 6)\", 'numero': \"'LSNP5Of' → Format invalide (lettres majuscules et chiffres uniquement)\"}"
+  },
+  {
+    "code": "AAD22",
+    "numero": "PONAAC0",
+    "nom": "Tine",
+    "prenom": "Jean",
+    "date_naissance": "18/05/2004",
+    "classe": "3emeA",
+    "notes": "{'PC': {'devoirs': [11.0], 'examen': 9.0, 'moyenne': 9.67}, 'Math': {'devoirs': [12.0, 14.5, 11.0], 'examen': 13.0, 'moyenne': 12.83}, 'Francais': {'devoirs': [14.0, 12.0], 'examen': 13.0, 'moyenne': 13.0}, 'Anglais': {'devoirs': [12.8], 'examen': 15.0, 'moyenne': 14.27}, 'SVT': {'devoirs': [10.0, 9.0, 16.0, 13.0], 'examen': 12.0, 'moyenne': 12.0}, 'HG': {'devoirs': [10.0], 'examen': 16.0, 'moyenne': 14.0}}",
+    "erreurs": "{'code': \"'AAD22' → Longueur invalide (5 au lieu de 6)\"}"
+  },
+  {
+    "code": "AAD22",
+    "numero": "27WERUG",
+    "nom": "Fall",
+    "prenom": "Ouley",
+    "date_naissance": "16/11/2005",
+    "classe": "3emeB",
+    "notes": "{'PC': {'devoirs': [11.0], 'examen': 19.0, 'moyenne': 16.33}, 'Math': {'devoirs': [2.0, 10.5, 11.0], 'examen': 13.0, 'moyenne': 11.28}, 'Francais': {'devoirs': [14.0, 11.0], 'examen': 13.0, 'moyenne': 12.83}, 'Anglais': {'devoirs': [3.8], 'examen': 10.0, 'moyenne': 7.93}, 'SVT': {'devoirs': [12.0, 9.0, 16.0, 11.0], 'examen': 10.0, 'moyenne': 10.67}, 'HG': {'devoirs': [11.0], 'examen': 15.0, 'moyenne': 13.67}}",
+    "erreurs": "{'code': \"'AAD22' → Longueur invalide (5 au lieu de 6)\"}"
+  },
+  {
+    "code": "AAD22",
+    "numero": "UHT9KD8",
+    "nom": "Seye",
+    "prenom": "Malick",
+    "date_naissance": "07/10/2007",
+    "classe": "5emeC",
+    "notes": "{'Math': {'devoirs': [10.0, 14.5, 11.0, 3.0], 'examen': 16.0, 'moyenne': 13.88}, 'PC': {'devoirs': [11.0], 'examen': 19.0, 'moyenne': 16.33}, 'Francais': {'devoirs': [4.0, 11.0], 'examen': 13.0, 'moyenne': 11.17}, 'SVT': {'devoirs': [12.0, 9.0, 16.0, 11.0], 'examen': 12.0, 'moyenne': 12.0}, 'HG': {'devoirs': [19.0], 'examen': 13.0, 'moyenne': 15.0}, 'Anglais': {'devoirs': [10.5], 'examen': 15.0, 'moyenne': 13.5}}",
+    "erreurs": "{'code': \"'AAD22' → Longueur invalide (5 au lieu de 6)\"}"
+  },
+  {
+    "code": "AAD22",
+    "numero": "O6G7XCQ",
+    "nom": "Tamba",
+    "prenom": "Lamine",
+    "date_naissance": "09/01/2006",
+    "classe": "3emeD",
+    "notes": "{'SVT': {'devoirs': [13.0, 9.0, 11.0], 'examen': 14.0, 'moyenne': 13.0}, 'HG': {'devoirs': [10.0], 'examen': 13.0, 'moyenne': 12.0}, 'Math': {'devoirs': [12.0, 14.5, 11.0], 'examen': 13.0, 'moyenne': 12.83}, 'Francais': {'devoirs': [8.0, 11.0], 'examen': 13.0, 'moyenne': 11.83}, 'Anglais': {'devoirs': [13.5], 'examen': 15.0, 'moyenne': 14.5}, 'PC': {'devoirs': [13.0, 11.0], 'examen': 9.0, 'moyenne': 10.0}}",
+    "erreurs": "{'code': \"'AAD22' → Longueur invalide (5 au lieu de 6)\"}"
+  },
+  {
+    "code": "AAD22",
+    "numero": "HDCB2G7",
+    "nom": "Ndaw",
+    "prenom": "Ousmane",
+    "date_naissance": "14/08/2000",
+    "classe": "4emeB",
+    "notes": "{'PC': {'devoirs': [11.0], 'examen': 19.0, 'moyenne': 16.33}, 'Math': {'devoirs': [12.0, 14.5, 11.0], 'examen': 3.0, 'moyenne': 6.17}, 'Francais': {'devoirs': [14.0, 11.0], 'examen': 13.0, 'moyenne': 12.83}, 'Anglais': {'devoirs': [13.8], 'examen': 5.0, 'moyenne': 7.93}, 'SVT': {'devoirs': [12.0, 19.0, 16.0, 11.0], 'examen': 19.0, 'moyenne': 17.5}, 'HG': {'devoirs': [11.0], 'examen': 10.0, 'moyenne': 10.33}}",
+    "erreurs": "{'code': \"'AAD22' → Longueur invalide (5 au lieu de 6)\"}"
+  },
+  {
+    "code": "AAD22",
+    "numero": "GFD3G8G",
+    "nom": "Ndour",
+    "prenom": "Fatime",
+    "date_naissance": "05/03/2002",
+    "classe": "5emeD",
+    "notes": "{'Math': {'devoirs': [9.0, 10.5, 10.0, 13.0], 'examen': 16.0, 'moyenne': 14.21}, 'PC': {'devoirs': [12.0], 'examen': 15.0, 'moyenne': 14.0}, 'Francais': {'devoirs': [10.0, 17.0], 'examen': 13.0, 'moyenne': 13.17}, 'SVT': {'devoirs': [15.0, 9.0, 6.0, 11.0], 'examen': 12.0, 'moyenne': 11.42}, 'HG': {'devoirs': [13.0], 'examen': 3.0, 'moyenne': 6.33}, 'Anglais': {'devoirs': [13.12], 'examen': 5.0, 'moyenne': 7.71}}",
+    "erreurs": "{'code': \"'AAD22' → Longueur invalide (5 au lieu de 6)\"}"
+  },
+  {
+    "code": "AAD22",
+    "numero": "GC4BDQ7",
+    "nom": "Sarr",
+    "prenom": "Oumi",
+    "date_naissance": "17/06/2003",
+    "classe": "3emeA",
+    "notes": "{'Math': {'devoirs': [10.0, 14.5, 11.0, 15.0], 'examen': 17.0, 'moyenne': 15.54}, 'PC': {'devoirs': [11.0], 'examen': 9.0, 'moyenne': 9.67}, 'Francais': {'devoirs': [16.0, 11.0], 'examen': 13.0, 'moyenne': 13.17}, 'SVT': {'devoirs': [12.0, 9.0, 14.0, 11.0], 'examen': 12.0, 'moyenne': 11.83}, 'HG': {'devoirs': [15.0], 'examen': 11.0, 'moyenne': 12.33}, 'Anglais': {'devoirs': [13.5], 'examen': 15.0, 'moyenne': 14.5}}",
+    "erreurs": "{'code': \"'AAD22' → Longueur invalide (5 au lieu de 6)\"}"
+  },
+  {
+    "code": "AAD22",
+    "numero": "BK63HBS",
+    "nom": "Gueye",
+    "prenom": "Astou",
+    "date_naissance": "28/02/2012",
+    "classe": "3emeA",
+    "notes": "{'SVT': {'devoirs': [15.0, 11.0, 11.0], 'examen': 12.0, 'moyenne': 12.11}, 'HG': {'devoirs': [6.0], 'examen': 16.0, 'moyenne': 12.67}, 'Math': {'devoirs': [10.0, 14.9, 11.0], 'examen': 17.0, 'moyenne': 15.32}, 'Francais': {'devoirs': [8.0, 13.0], 'examen': 13.0, 'moyenne': 12.17}, 'Anglais': {'devoirs': [18.5], 'examen': 15.0, 'moyenne': 16.17}, 'PC': {'devoirs': [7.0, 11.0], 'examen': 9.0, 'moyenne': 9.0}}",
+    "erreurs": "{'code': \"'AAD22' → Longueur invalide (5 au lieu de 6)\"}"
+  },
+  {
+    "code": "AAD22",
+    "numero": "GSQ3H84",
+    "nom": "Diouf",
+    "prenom": "Wally",
+    "date_naissance": "30/09/2005",
+    "classe": "4emeC",
+    "notes": "",
+    "erreurs": "{'code': \"'AAD22' → Longueur invalide (5 au lieu de 6)\", 'notes': 'Notes manquantes'}"
+  },
+  {
+    "code": "ABD009",
+    "numero": "ERSTYDD",
+    "nom": "Akapla",
+    "prenom": "Diop",
+    "date_naissance": "03/05/1978",
+    "classe": "5emeC",
+    "notes": "{'Math': {'devoirs': [10.0, 14.0], 'examen': 15.0, 'moyenne': 14.0}, 'Francais': {'devoirs': [11.0, 9.0, 1.0], 'examen': 10.0, 'moyenne': 9.0}, 'Anglais': {'devoirs': [10.9, 9.0], 'examen': 1.0, 'moyenne': 3.98}, 'PC': {'devoirs': [10.0], 'examen': 11.0, 'moyenne': 10.67}, 'SVT': {'devoirs': [10.0, 2.0, 6.0, 10.0], 'examen': 9.0, 'moyenne': 8.33}, 'HG': {'devoirs': [17.0], 'examen': 0.0, 'moyenne': 5.67}}",
+    "erreurs": "{'numero': \"'ERSTYDD' → Le numéro doit contenir au moins un chiffre\"}"
+  },
+  {
+    "code": "ABD009",
+    "numero": "ERTDH6G",
+    "nom": "Gadiaga",
+    "prenom": "Xouli",
+    "date_naissance": "30/07/2018",
+    "classe": "5eme 4",
+    "notes": "{'Math': {'devoirs': [1.0, 4.0], 'examen': 15.0, 'moyenne': 10.83}, 'Francais': {'devoirs': [10.0, 19.0, 14.0], 'examen': 13.0, 'moyenne': 13.44}, 'Anglais': {'devoirs': [10.9, 9.0], 'examen': 1.0, 'moyenne': 3.98}, 'PC': {'devoirs': [10.0], 'examen': 11.0, 'moyenne': 10.67}, 'SVT': {'devoirs': [10.0, 20.0, 16.0, 10.0], 'examen': 9.0, 'moyenne': 10.67}, 'HG': {'devoirs': [9.0], 'examen': 18.0, 'moyenne': 15.0}}",
+    "erreurs": "{'classe': \"'5eme 4' → Classe invalide : '5eme 4' (ex attendu : 6emeA, 3emeB...)\"}"
+  },
+  {
+    "code": "ABD009",
+    "numero": "TTEDJE56",
+    "nom": "Missari",
+    "prenom": "Koumpa",
+    "date_naissance": "31/09/2014",
+    "classe": "3emeB",
+    "notes": "{'Math': {'devoirs': [10.0, 4.0], 'examen': 15.0, 'moyenne': 12.33}, 'Francais': {'devoirs': [18.0, 9.0, 18.0], 'examen': 10.0, 'moyenne': 11.67}, 'Anglais': {'devoirs': [10.9, 9.0], 'examen': 5.0, 'moyenne': 6.65}, 'PC': {'devoirs': [10.0], 'examen': 11.0, 'moyenne': 10.67}, 'SVT': {'devoirs': [10.0, 20.0, 16.0, 10.0], 'examen': 9.0, 'moyenne': 10.67}, 'HG': {'devoirs': [19.0], 'examen': 10.0, 'moyenne': 13.0}}",
+    "erreurs": "{'numero': \"'TTEDJE56' → Longueur invalide (8 au lieu de 7)\", 'date_naissance': \"'31/09/2014' → Format de date non reconnu : '31/09/2014'\"}"
+  },
+  {
+    "code": "ABD009",
+    "numero": "RTGHSDG",
+    "nom": "Ndol",
+    "prenom": "Gueye",
+    "date_naissance": "30/09/2006",
+    "classe": "5emeB",
+    "notes": "{'Math': {'devoirs': [10.0, 4.0], 'examen': 15.0, 'moyenne': 12.33}, 'Francais': {'devoirs': [11.0, 1.0, 17.0], 'examen': 10.0, 'moyenne': 9.89}, 'Anglais': {'devoirs': [8.9, 5.0], 'examen': 14.0, 'moyenne': 11.65}, 'PC': {'devoirs': [17.0], 'examen': 11.0, 'moyenne': 13.0}, 'SVT': {'devoirs': [15.0, 10.0, 6.0, 8.0], 'examen': 5.0, 'moyenne': 6.58}, 'HG': {'devoirs': [9.0], 'examen': 16.0, 'moyenne': 13.67}}",
+    "erreurs": "{'numero': \"'RTGHSDG' → Le numéro doit contenir au moins un chiffre\"}"
+  },
+  {
+    "code": "ABN018",
+    "numero": "QBN34UI",
+    "nom": "Moose",
+    "prenom": "Rodriguez",
+    "date_naissance": "01-22-1999",
+    "classe": "5emeB",
+    "notes": "Français[12|14:15]#Anglais[16|18:19]#SVT[10|11:09]#HG[12|11:17]#Science_Physique[15|17:18]#Math[13|17:16]",
+    "erreurs": "{'date_naissance': \"'01-22-1999' → Format de date non reconnu : '01-22-1999'\", 'notes': \"Format invalide pour : 'Science_Physique[15|17:18]'\"}"
+  },
+  {
+    "code": "ABN018",
+    "numero": "LSNP1OC",
+    "nom": "Moosky",
+    "prenom": "Faye",
+    "date_naissance": "23/04/1988",
+    "classe": "4emeC",
+    "notes": "rançais[10|07:15]#Anglais[01|18:13]#SVT[10|11:14]#HG[16|17:14]#Science_Physique[18|12:12]#Math[15|17:11]",
+    "erreurs": "{'notes': \"Format invalide pour : 'Science_Physique[18|12:12]'\"}"
+  },
+  {
+    "code": "ABN018",
+    "numero": "PONAAM0",
+    "nom": "Mayoro",
+    "prenom": "Diop",
+    "date_naissance": "14/05/2002",
+    "classe": "6emeB",
+    "notes": "Français[12|08:17]#Anglais[15|19:17]#SVT[18|16:17]#HG[18|13:17]#Science_Physique[13|13:12]#Math[15|14:15]",
+    "erreurs": "{'notes': \"Format invalide pour : 'Science_Physique[13|13:12]'\"}"
+  },
+  {
+    "code": "ABN018",
+    "numero": "83WERRE",
+    "nom": "Wesh",
+    "prenom": "Morey",
+    "date_naissance": "25_11_2004",
+    "classe": "3emeD",
+    "notes": "Français[16|08:15]#Anglais[19|19:17]#SVT[12|14:07]#HG[18|13:17]#Science_Physique[00|03:02]#Math[06|17:13]",
+    "erreurs": "{'date_naissance': \"'25_11_2004' → Format de date non reconnu : '25_11_2004'\", 'notes': \"Format invalide pour : 'Science_Physique[00|03:02]'\"}"
+  },
+  {
+    "code": "ABN018",
+    "numero": "TER0R0R",
+    "nom": "Billie",
+    "prenom": "Jeane",
+    "date_naissance": "17/08/1998",
+    "classe": "1ereS1",
+    "notes": "Français[06|08:05]#Anglais[20|20:17]#SVT[13|14:13]#HG[11|13:17]#Science_Physique[12|11:15]#Math[06|17:18]",
+    "erreurs": "{'classe': \"'1ereS1' → Classe invalide : '1ereS1' (ex attendu : 6emeA, 3emeB...)\", 'notes': \"Format invalide pour : 'Science_Physique[12|11:15]'\"}"
+  },
+  {
+    "code": "ABN018",
+    "numero": "WHYIAMI",
+    "nom": "Ragnard",
+    "prenom": "Lordbrock",
+    "date_naissance": "01/12/1979",
+    "classe": "1 ere S1",
+    "notes": "Français[06|07:05]#Anglais[10|10:11]#SVT[13|17:13]#HG[11|05:07]#Science_Physique[12|18:15]#Math[16|17:18]",
+    "erreurs": "{'numero': \"'WHYIAMI' → Le numéro doit contenir au moins un chiffre\", 'classe': \"'1 ere S1' → Classe invalide : '1 ere S1' (ex attendu : 6emeA, 3emeB...)\", 'notes': \"Format invalide pour : 'Science_Physique[12|18:15]'\"}"
+  },
+  {
+    "code": "ABN018",
+    "numero": "WOO3OOO",
+    "nom": "Perus",
+    "prenom": "Morgan",
+    "date_naissance": "06/06/1970",
+    "classe": "Tle S1",
+    "notes": "Français[08|07:15]#Anglais[10|10:09]#SVT[13|13:13]#HG[03|05:07]#Science_Physique[13|11:12]#Math[10|07:08]",
+    "erreurs": "{'classe': \"'Tle S1' → Classe invalide : 'Tle S1' (ex attendu : 6emeA, 3emeB...)\", 'notes': \"Format invalide pour : 'Science_Physique[13|11:12]'\"}"
+  },
+  {
+    "code": "ABN018",
+    "numero": "558YRYT",
+    "nom": "Shawn",
+    "prenom": "Thiam",
+    "date_naissance": "28/02/1997",
+    "classe": "Tle S2",
+    "notes": "Français[09|17:16]#Anglais[10|13:09]#SVT[13|12:14]#HG[13|15:07]#Science_Physique[12|12:14]#Math[11|07:18]",
+    "erreurs": "{'classe': \"'Tle S2' → Classe invalide : 'Tle S2' (ex attendu : 6emeA, 3emeB...)\", 'notes': \"Format invalide pour : 'Science_Physique[12|12:14]'\"}"
+  },
+  {
+    "code": "ABN018",
+    "numero": "444111T",
+    "nom": "Mbeuthie Fall",
+    "prenom": "Laye",
+    "date_naissance": "01/09/2015",
+    "classe": "Tlel'1",
+    "notes": "Français[09|17:16]#Anglais[10|13:15]#SVT[13|12:14]#HG[11|15:11]#Science_Physique[12|13:14]#Math[10|07:12]",
+    "erreurs": "{'classe': \"'Tlel'1' → Classe invalide : 'Tlel'1' (ex attendu : 6emeA, 3emeB...)\", 'notes': \"Format invalide pour : 'Science_Physique[12|13:14]'\"}"
+  },
+  {
+    "code": "ABN018",
+    "numero": "WORK246",
+    "nom": "Famara",
+    "prenom": "Bodian",
+    "date_naissance": "12/12/1995",
+    "classe": "5eme F",
+    "notes": "Français[19|17:10]#Anglais[13|14:15]#SVT[13|16:14]#HG[13|15:11]#Science_Physique[17|13:14]#Math[16|07:12]",
+    "erreurs": "{'classe': \"'5eme F' → Classe invalide : '5eme F' (ex attendu : 6emeA, 3emeB...)\", 'notes': \"Format invalide pour : 'Science_Physique[17|13:14]'\"}"
+  },
+  {
+    "code": "AFD006",
+    "numero": "2022R3M",
+    "nom": "DIAW",
+    "prenom": "Fallou",
+    "date_naissance": "o5-06-1999",
+    "classe": "3emeC",
+    "notes": "{'Math': {'devoirs': [17.0, 16.0], 'examen': 19.0, 'moyenne': 18.17}, 'Français': {'devoirs': [14.0, 15.0], 'examen': 14.0, 'moyenne': 14.17}, 'Anglais': {'devoirs': [18.0, 17.0], 'examen': 16.0, 'moyenne': 16.5}, 'PC': {'devoirs': [19.0, 19.0], 'examen': 19.0, 'moyenne': 19.0}, 'SVT': {'devoirs': [11.0], 'examen': 16.0, 'moyenne': 14.33}, 'HG': {'devoirs': [12.0], 'examen': 19.0, 'moyenne': 16.67}}",
+    "erreurs": "{'date_naissance': \"'o5-06-1999' → Format de date non reconnu : 'o5-06-1999'\"}"
+  },
+  {
+    "code": "AFD006",
+    "numero": "2016EJKL",
+    "nom": "SECK",
+    "prenom": "Modou",
+    "date_naissance": "03/01/1999",
+    "classe": "5emeB",
+    "notes": "{'Math': {'devoirs': [5.0, 3.0, 0.0], 'examen': 9.0, 'moyenne': 6.89}, 'Français': {'devoirs': [9.0, 12.0, 13.0], 'examen': 10.0, 'moyenne': 10.44}, 'Anglais': {'devoirs': [12.0, 12.0], 'examen': 16.0, 'moyenne': 14.67}, 'PC': {'devoirs': [4.0, 8.0], 'examen': 10.0, 'moyenne': 8.67}, 'SVT': {'devoirs': [12.0, 13.0], 'examen': 14.0, 'moyenne': 13.5}, 'HG': {'devoirs': [10.0, 12.0], 'examen': 15.0, 'moyenne': 13.67}}",
+    "erreurs": "{'numero': \"'2016EJKL' → Longueur invalide (8 au lieu de 7)\"}"
+  },
+  {
+    "code": "AFD006",
+    "numero": "2019GHS",
+    "nom": "BOISY",
+    "prenom": "Chris",
+    "date_naissance": "04/09/2001",
+    "classe": "5emeC",
+    "notes": "Math[13|11:13] #PC[13|19:14]  #Francais[12|14:14]  #SVT[15|19:15] #HG[10|18:13]  #Anglais[11|12|11:20",
+    "erreurs": "{'notes': \"Format invalide pour : 'Anglais[11|12|11:20'\"}"
+  },
+  {
+    "code": "AFD006",
+    "numero": "20178XYZ",
+    "nom": "FALL",
+    "prenom": "Khabane",
+    "date_naissance": "27/12/1998",
+    "classe": "6emeC",
+    "notes": "{'Math': {'devoirs': [13.0, 11.0], 'examen': 13.0, 'moyenne': 12.67}, 'PC': {'devoirs': [13.0, 19.0], 'examen': 14.0, 'moyenne': 14.67}, 'Francais': {'devoirs': [12.0, 14.0], 'examen': 14.0, 'moyenne': 13.67}, 'SVT': {'devoirs': [15.0, 19.0], 'examen': 15.0, 'moyenne': 15.67}, 'HG': {'devoirs': [10.0, 18.0], 'examen': 13.0, 'moyenne': 13.33}, 'Anglais': {'devoirs': [11.0, 12.0, 11.0], 'examen': 20.0, 'moyenne': 17.11}}",
+    "erreurs": "{'numero': \"'20178XYZ' → Longueur invalide (8 au lieu de 7)\"}"
+  },
+  {
+    "code": "AFD006",
+    "numero": "2018JKH",
+    "nom": "NDIAYE",
+    "prenom": "Zeyna",
+    "date_naissance": "23/06/1998",
+    "classe": "4emeA",
+    "notes": "Math[13|11:13] #PC[13|19:14]  #Francais[12|14:14]  #SVT[15|19:15] #HG[10|18:13]  #Anglais[11|12|11:20",
+    "erreurs": "{'notes': \"Format invalide pour : 'Anglais[11|12|11:20'\"}"
+  },
+  {
+    "code": "AID011",
+    "numero": "201305PG8",
+    "nom": "DIAW",
+    "prenom": "FARA",
+    "date_naissance": "09/06/1995",
+    "classe": "6emeA",
+    "notes": "Français[12|14:15]#Anglais[16|18:19]#SVT[10|11:09]#HG[12|11:17]#Science_Physique[15|17:18]#Math[13|17:16]",
+    "erreurs": "{'numero': \"'201305PG8' → Longueur invalide (9 au lieu de 7)\", 'notes': \"Format invalide pour : 'Science_Physique[15|17:18]'\"}"
+  },
+  {
+    "code": "AID011",
+    "numero": "201307PG8",
+    "nom": "NDIOUR",
+    "prenom": "LEMOU",
+    "date_naissance": "12/07/1996",
+    "classe": "3emeA",
+    "notes": "{'PC': {'devoirs': [11.0], 'examen': 9.0, 'moyenne': 9.67}, 'Math': {'devoirs': [12.0, 14.5, 11.0], 'examen': 13.0, 'moyenne': 12.83}, 'Francais': {'devoirs': [14.0, 12.0], 'examen': 13.0, 'moyenne': 13.0}, 'Anglais': {'devoirs': [12.8], 'examen': 15.0, 'moyenne': 14.27}, 'SVT': {'devoirs': [10.0, 9.0, 16.0, 13.0], 'examen': 12.0, 'moyenne': 12.0}, 'HG': {'devoirs': [10.0], 'examen': 16.0, 'moyenne': 14.0}}",
+    "erreurs": "{'numero': \"'201307PG8' → Longueur invalide (9 au lieu de 7)\"}"
+  },
+  {
+    "code": "AID011",
+    "numero": "201301PFT",
+    "nom": "FAYE",
+    "prenom": "BIRAM",
+    "date_naissance": "23/03/1999",
+    "classe": "3emeB",
+    "notes": "{'PC': {'devoirs': [11.0], 'examen': 9.0, 'moyenne': 9.67}, 'Math': {'devoirs': [12.0, 14.5, 11.0], 'examen': 13.0, 'moyenne': 12.83}, 'Francais': {'devoirs': [14.0, 12.0], 'examen': 13.0, 'moyenne': 13.0}, 'Anglais': {'devoirs': [12.8], 'examen': 15.0, 'moyenne': 14.27}, 'SVT': {'devoirs': [10.0, 9.0, 16.0, 13.0], 'examen': 12.0, 'moyenne': 12.0}, 'HG': {'devoirs': [10.0], 'examen': 16.0, 'moyenne': 14.0}}",
+    "erreurs": "{'numero': \"'201301PFT' → Longueur invalide (9 au lieu de 7)\"}"
+  },
+  {
+    "code": "AID011",
+    "numero": "201308PG7",
+    "nom": "DIOUF",
+    "prenom": "ALY",
+    "date_naissance": "22/05/1998",
+    "classe": "5emeC",
+    "notes": "{'PC': {'devoirs': [11.0], 'examen': 9.0, 'moyenne': 9.67}, 'Math': {'devoirs': [12.0, 14.5, 11.0], 'examen': 13.0, 'moyenne': 12.83}, 'Francais': {'devoirs': [4.0, 11.0], 'examen': 13.0, 'moyenne': 11.17}, 'Anglais': {'devoirs': [13.8], 'examen': 15.0, 'moyenne': 14.6}, 'SVT': {'devoirs': [12.0, 9.0, 16.0, 11.0], 'examen': 12.0, 'moyenne': 12.0}, 'HG': {'devoirs': [11.0], 'examen': 13.0, 'moyenne': 12.33}}",
+    "erreurs": "{'numero': \"'201308PG7' → Longueur invalide (9 au lieu de 7)\"}"
+  },
+  {
+    "code": "AID011",
+    "numero": "201306PH3",
+    "nom": "DIOP",
+    "prenom": "DABA",
+    "date_naissance": "24/09/1999",
+    "classe": "3emeD",
+    "notes": "{'Math': {'devoirs': [10.0, 11.0], 'examen': 15.0, 'moyenne': 13.5}, 'Francais': {'devoirs': [7.0, 12.0, 8.0], 'examen': 13.0, 'moyenne': 11.67}, 'Anglais': {'devoirs': [13.5, 9.0], 'examen': 15.0, 'moyenne': 13.75}, 'PC': {'devoirs': [11.0], 'examen': 9.0, 'moyenne': 9.67}, 'SVT': {'devoirs': [12.0, 9.0, 16.0, 11.0], 'examen': 12.0, 'moyenne': 12.0}, 'HG': {'devoirs': [10.0], 'examen': 13.0, 'moyenne': 12.0}}",
+    "erreurs": "{'numero': \"'201306PH3' → Longueur invalide (9 au lieu de 7)\"}"
+  },
+  {
+    "code": "AID011",
+    "numero": "201302PL6",
+    "nom": "DIENE",
+    "prenom": "DALY",
+    "date_naissance": "12/10/1997",
+    "classe": "4emeB",
+    "notes": "{'PC': {'devoirs': [11.0], 'examen': 9.0, 'moyenne': 9.67}, 'Math': {'devoirs': [12.0, 14.5, 11.0], 'examen': 13.0, 'moyenne': 12.83}, 'Francais': {'devoirs': [4.0, 11.0], 'examen': 13.0, 'moyenne': 11.17}, 'Anglais': {'devoirs': [13.8], 'examen': 15.0, 'moyenne': 14.6}, 'SVT': {'devoirs': [12.0, 9.0, 16.0, 11.0], 'examen': 12.0, 'moyenne': 12.0}, 'HG': {'devoirs': [11.0], 'examen': 13.0, 'moyenne': 12.33}}",
+    "erreurs": "{'numero': \"'201302PL6' → Longueur invalide (9 au lieu de 7)\"}"
+  },
+  {
+    "code": "AID011",
+    "numero": "201305PY9",
+    "nom": "FALL",
+    "prenom": "ABOU",
+    "date_naissance": "23-decembre-1994",
+    "classe": "5emeD",
+    "notes": "{'Math': {'devoirs': [14.0, 12.0, 10.0], 'examen': 12.0, 'moyenne': 12.0}, 'PC': {'devoirs': [12.0, 9.0], 'examen': 12.0, 'moyenne': 11.5}, 'Francais': {'devoirs': [14.0], 'examen': 15.0, 'moyenne': 14.67}, 'SVT': {'devoirs': [16.0], 'examen': 17.0, 'moyenne': 16.67}, 'HG': {'devoirs': [12.0, 16.0], 'examen': 14.0, 'moyenne': 14.0}, 'Anglais': {'devoirs': [13.0, 10.0], 'examen': 11.0, 'moyenne': 11.17}}",
+    "erreurs": "{'numero': \"'201305PY9' → Longueur invalide (9 au lieu de 7)\", 'date_naissance': \"'23-decembre-1994' → Format de date non reconnu : '23-decembre-1994'\"}"
+  },
+  {
+    "code": "AID011",
+    "numero": "201306PT4",
+    "nom": "FAYE",
+    "prenom": "SIDI",
+    "date_naissance": "12/11/1993",
+    "classe": "3emeA",
+    "notes": "{'PC': {'devoirs': [11.0], 'examen': 9.0, 'moyenne': 9.67}, 'Math': {'devoirs': [12.0, 14.5, 11.0], 'examen': 13.0, 'moyenne': 12.83}, 'Francais': {'devoirs': [4.0, 11.0], 'examen': 13.0, 'moyenne': 11.17}, 'Anglais': {'devoirs': [13.8], 'examen': 15.0, 'moyenne': 14.6}, 'SVT': {'devoirs': [12.0, 9.0, 16.0, 11.0], 'examen': 12.0, 'moyenne': 12.0}, 'HG': {'devoirs': [11.0], 'examen': 13.0, 'moyenne': 12.33}}",
+    "erreurs": "{'numero': \"'201306PT4' → Longueur invalide (9 au lieu de 7)\"}"
+  },
+  {
+    "code": "AID011",
+    "numero": "201301PB7",
+    "nom": "SENE",
+    "prenom": "DOMINIQUE",
+    "date_naissance": "24/01/1998",
+    "classe": "3emeA",
+    "notes": "{'Math': {'devoirs': [10.0, 14.5, 11.0, 15.0], 'examen': 17.0, 'moyenne': 15.54}, 'PC': {'devoirs': [11.0], 'examen': 9.0, 'moyenne': 9.67}, 'Francais': {'devoirs': [16.0, 11.0], 'examen': 13.0, 'moyenne': 13.17}, 'SVT': {'devoirs': [12.0, 9.0, 14.0, 11.0], 'examen': 12.0, 'moyenne': 11.83}, 'HG': {'devoirs': [15.0], 'examen': 11.0, 'moyenne': 12.33}, 'Anglais': {'devoirs': [13.5], 'examen': 15.0, 'moyenne': 14.5}}",
+    "erreurs": "{'numero': \"'201301PB7' → Longueur invalide (9 au lieu de 7)\"}"
+  },
+  {
+    "code": "AID011",
+    "numero": "201309OD3",
+    "nom": "NDIAYE",
+    "prenom": "SALIF",
+    "date_naissance": "26/06/1996",
+    "classe": "4emeC",
+    "notes": "{'Math': {'devoirs': [10.0, 11.0], 'examen': 15.0, 'moyenne': 13.5}, 'Francais': {'devoirs': [7.0, 9.0, 8.0], 'examen': 13.0, 'moyenne': 11.33}, 'Anglais': {'devoirs': [10.5, 9.0], 'examen': 15.0, 'moyenne': 13.25}, 'PC': {'devoirs': [10.0], 'examen': 11.0, 'moyenne': 10.67}, 'SVT': {'devoirs': [12.0, 11.0, 16.0, 8.0], 'examen': 12.0, 'moyenne': 11.92}, 'HG': {'devoirs': [10.0], 'examen': 10.0, 'moyenne': 10.0}}",
+    "erreurs": "{'numero': \"'201309OD3' → Longueur invalide (9 au lieu de 7)\"}"
+  },
+  {
+    "code": "AKH014",
+    "numero": "R456T7O",
+    "nom": "FAURE",
+    "prenom": "JULIE",
+    "date_naissance": "12/11/2000",
+    "classe": "6èmeG",
+    "notes": "{'Math': {'devoirs': [20.0, 19.5], 'examen': 5.0, 'moyenne': 9.92}, 'Francais': {'devoirs': [13.0, 16.0], 'examen': 14.0, 'moyenne': 14.17}, 'Anglais': {'devoirs': [17.0, 19.0], 'examen': 17.0, 'moyenne': 17.33}, 'PC': {'devoirs': [14.0, 13.0], 'examen': 17.0, 'moyenne': 15.83}, 'SVT': {'devoirs': [12.0, 19.0], 'examen': 10.0, 'moyenne': 11.83}, 'HG': {'devoirs': [16.0, 19.0], 'examen': 17.0, 'moyenne': 17.17}}",
+    "erreurs": "{'classe': \"'6èmeG' → Classe invalide : '6èmeG' (ex attendu : 6emeA, 3emeB...)\"}"
+  },
+  {
+    "code": "AKH014",
+    "numero": "9OIM76T",
+    "nom": "GALEA",
+    "prenom": "EMILIE",
+    "date_naissance": "04/07/1994",
+    "classe": "5emeA",
+    "notes": "MATH[18|14|20]#PC[12|13:15]#SVT[10|13:16]#FRANÇAIS[10|11:14]#ANGLAIS[11|11:20]#HG[10|12|14]",
+    "erreurs": "{'notes': \"Pas d'examen pour MATH (manque ':')\"}"
+  },
+  {
+    "code": "AKH014",
+    "numero": "30NB45E",
+    "nom": "HAMAMA",
+    "prenom": "MAVEL",
+    "date_naissance": "07/01/1998",
+    "classe": "3emeB",
+    "notes": "MATH[11|14|20]#PC[12|13:15]#SVT[10|13:16]#FRANÇAIS[10|11:14]#ANGLAIS[11|11:20]#HG[10|12|14]",
+    "erreurs": "{'notes': \"Pas d'examen pour MATH (manque ':')\"}"
+  },
+  {
+    "code": "ALT020",
+    "numero": "JROÙ457",
+    "nom": "CONDOUL",
+    "prenom": "Sangoul",
+    "date_naissance": "07|06|1945",
+    "classe": "6emeA",
+    "notes": "{'MATH': {'devoirs': [15.0, 10.0], 'examen': 19.0, 'moyenne': 16.83}, 'SVT': {'devoirs': [16.0, 13.0], 'examen': 19.0, 'moyenne': 17.5}, 'PC': {'devoirs': [16.0, 13.0], 'examen': 10.0, 'moyenne': 11.5}, 'ANGLAIS': {'devoirs': [15.0, 2.0], 'examen': 16.0, 'moyenne': 13.5}, 'FRANCAIS': {'devoirs': [15.0, 20.0], 'examen': 11.0, 'moyenne': 13.17}, 'HG': {'devoirs': [12.0, 13.0], 'examen': 11.0, 'moyenne': 11.5}}",
+    "erreurs": "{'numero': \"'JROÙ457' → Format invalide (lettres majuscules et chiffres uniquement)\", 'date_naissance': \"'07|06|1945' → Format de date non reconnu : '07|06|1945'\"}"
+  },
+  {
+    "code": "ALT020",
+    "numero": "FYHE142",
+    "nom": "DIOUF",
+    "prenom": "MBathiou",
+    "date_naissance": "14-25-13",
+    "classe": "6emeB",
+    "notes": "{'MATH': {'devoirs': [13.0, 18.0], 'examen': 16.0, 'moyenne': 15.83}, 'SVT': {'devoirs': [18.0, 19.0], 'examen': 20.0, 'moyenne': 19.5}, 'PC': {'devoirs': [17.0, 13.0], 'examen': 14.0, 'moyenne': 14.33}, 'ANGLAIS': {'devoirs': [15.0, 12.0], 'examen': 14.0, 'moyenne': 13.83}, 'FRANCAIS': {'devoirs': [9.0, 1.0], 'examen': 19.0, 'moyenne': 14.33}, 'HG': {'devoirs': [16.0, 11.0], 'examen': 15.0, 'moyenne': 14.5}}",
+    "erreurs": "{'date_naissance': \"'14-25-13' → Format de date non reconnu : '14-25-13'\"}"
+  },
+  {
+    "code": "AMB001",
+    "numero": "101465876kj",
+    "nom": "Gueye",
+    "prenom": "Moussa",
+    "date_naissance": "01/01/2000",
+    "classe": "6emeA",
+    "notes": "MATH[10|14|20]#PC[12|13:15]#SVT[10|13:16]#FRANÇAIS[10|11:14]#ANGLAIS[11|11:20]#HG[10|12|14]",
+    "erreurs": "{'numero': \"'101465876kj' → Longueur invalide (11 au lieu de 7)\", 'notes': \"Pas d'examen pour MATH (manque ':')\"}"
+  },
+  {
+    "code": "AMB001",
+    "numero": "16382702l",
+    "nom": "DIOUF",
+    "prenom": "BALLA",
+    "date_naissance": "02/01/2000",
+    "classe": "6emeA",
+    "notes": "MATH[11|14|20]#PC[12|13:15]#SVT[10|13:16]#FRANÇAIS[10|11:14]#ANGLAIS[11|11:20]#HG[10|12|14]",
+    "erreurs": "{'numero': \"'16382702l' → Longueur invalide (9 au lieu de 7)\", 'notes': \"Pas d'examen pour MATH (manque ':')\"}"
+  },
+  {
+    "code": "AMB001",
+    "numero": "12889HI",
+    "nom": "CAMARA",
+    "prenom": "KAMOU",
+    "date_naissance": "03/01/2000",
+    "classe": "6emeA",
+    "notes": "MATH[12|14|20]#PC[12|13:15]#SVT[10|13:16]#FRANÇAIS[10|11:14]#ANGLAIS[11|11:20]#HG[10|12|14]",
+    "erreurs": "{'notes': \"Pas d'examen pour MATH (manque ':')\"}"
+  },
+  {
+    "code": "AMB001",
+    "numero": "1732919jj",
+    "nom": "DIOP",
+    "prenom": "MODOU",
+    "date_naissance": "04/01/2000",
+    "classe": "6emeA",
+    "notes": "MATH[13|14|20]#PC[12|13:15]#SVT[10|13:16]#FRANÇAIS[10|11:14]#ANGLAIS[11|11:20]#HG[10|12|14]",
+    "erreurs": "{'numero': \"'1732919jj' → Longueur invalide (9 au lieu de 7)\", 'notes': \"Pas d'examen pour MATH (manque ':')\"}"
+  },
+  {
+    "code": "AMB001",
+    "numero": "127923ghj",
+    "nom": "FALL",
+    "prenom": "SOBLE",
+    "date_naissance": "05/01/2000",
+    "classe": "6emeA",
+    "notes": "MATH[14|14|20]#PC[12|13:15]#SVT[10|13:16]#FRANÇAIS[10|11:14]#ANGLAIS[11|11:20]#HG[10|12|14]",
+    "erreurs": "{'numero': \"'127923ghj' → Longueur invalide (9 au lieu de 7)\", 'notes': \"Pas d'examen pour MATH (manque ':')\"}"
+  },
+  {
+    "code": "AMB001",
+    "numero": "1908GD",
+    "nom": "GAYE",
+    "prenom": "PATHÉ",
+    "date_naissance": "06/01/2000",
+    "classe": "6emeA",
+    "notes": "MATH[15|14|20]#PC[12|13:15]#SVT[10|13:16]#FRANÇAIS[10|11:14]#ANGLAIS[11|11:20]#HG[10|12|14]",
+    "erreurs": "{'numero': \"'1908GD' → Longueur invalide (6 au lieu de 7)\", 'notes': \"Pas d'examen pour MATH (manque ':')\"}"
+  },
+  {
+    "code": "AMB001",
+    "numero": "1382839hjklk",
+    "nom": "HANN",
+    "prenom": "JIM",
+    "date_naissance": "07/01/2000",
+    "classe": "6emeA",
+    "notes": "MATH[16|14|20]#PC[12|13:15]#SVT[10|13:16]#FRANÇAIS[10|11:14]#ANGLAIS[11|11:20]#HG[10|12|14]",
+    "erreurs": "{'numero': \"'1382839hjklk' → Longueur invalide (12 au lieu de 7)\", 'notes': \"Pas d'examen pour MATH (manque ':')\"}"
+  },
+  {
+    "code": "AMB001",
+    "numero": "19937HH",
+    "nom": "JANN",
+    "prenom": "KABOU",
+    "date_naissance": "08/01/2000",
+    "classe": "6emeA",
+    "notes": "MATH[17|14|20]#PC[12|13:15]#SVT[10|13:16]#FRANÇAIS[10|11:14]#ANGLAIS[11|11:20]#HG[10|12|14]",
+    "erreurs": "{'notes': \"Pas d'examen pour MATH (manque ':')\"}"
+  },
+  {
+    "code": "AMB001",
+    "numero": "17282hh",
+    "nom": "KA",
+    "prenom": "LAMINE",
+    "date_naissance": "09/01/2000",
+    "classe": "6emeA",
+    "notes": "MATH[18|14|20]#PC[12|13:15]#SVT[10|13:16]#FRANÇAIS[10|11:14]#ANGLAIS[11|11:20]#HG[10|12|14]",
+    "erreurs": "{'numero': \"'17282hh' → Format invalide (lettres majuscules et chiffres uniquement)\", 'notes': \"Pas d'examen pour MATH (manque ':')\"}"
+  },
+  {
+    "code": "AMB001",
+    "numero": "17329pp",
+    "nom": "LOUM",
+    "prenom": "MOUSSA",
+    "date_naissance": "10/01/2000",
+    "classe": "6emeA",
+    "notes": "MATH[19|14|20]#PC[12|13:15]#SVT[10|13:16]#FRANÇAIS[10|11:14]#ANGLAIS[11|11:20]#HG[10|12|14]",
+    "erreurs": "{'numero': \"'17329pp' → Format invalide (lettres majuscules et chiffres uniquement)\", 'notes': \"Pas d'examen pour MATH (manque ':')\"}"
+  },
+  {
+    "code": "AMC002",
+    "numero": "AAAA0000",
+    "nom": "BA",
+    "prenom": "MODOU",
+    "date_naissance": "12/12/2005",
+    "classe": "3emeA",
+    "notes": "MATH[|14|20]#PC[12|13:15]#SVT[10|13:16]#FRANÇAIS[10|11:14]#ANGLAIS[11|11:20]#HG[10|12|14]",
+    "erreurs": "{'numero': \"'AAAA0000' → Longueur invalide (8 au lieu de 7)\", 'notes': \"Pas d'examen pour MATH (manque ':')\"}"
+  },
+  {
+    "code": "AMC002",
+    "numero": "AAAA0001",
+    "nom": "BODIAN",
+    "prenom": "FATOU",
+    "date_naissance": "11/04/2006",
+    "classe": "3emeB",
+    "notes": "MATH[11|14|20]#PC[12|13:15]#SVT[10|13:16]#FRANÇAIS[10|11:14]#ANGLAIS[11|11:20]#HG[10|12|14]",
+    "erreurs": "{'numero': \"'AAAA0001' → Longueur invalide (8 au lieu de 7)\", 'notes': \"Pas d'examen pour MATH (manque ':')\"}"
+  },
+  {
+    "code": "AMC002",
+    "numero": "AAAA0002",
+    "nom": "CAMARA",
+    "prenom": "PAPE",
+    "date_naissance": "04/02/2009",
+    "classe": "4emeB",
+    "notes": "MATH[11|14|20]#PC[12|13:15]#SVT[10|13:16]#FRANÇAIS[10|11:14]#ANGLAIS[11|11:20]#HG[10|12|14]",
+    "erreurs": "{'numero': \"'AAAA0002' → Longueur invalide (8 au lieu de 7)\", 'notes': \"Pas d'examen pour MATH (manque ':')\"}"
+  },
+  {
+    "code": "AMC002",
+    "numero": "AAAA0003",
+    "nom": "CISSE",
+    "prenom": "PHILO",
+    "date_naissance": "25/03/2010",
+    "classe": "5emeB",
+    "notes": "MATH[11|14|20]#PC[12|13:15]#SVT[10|13:16]#FRANÇAIS[10|11:14]#ANGLAIS[11|11:20]#HG[10|12|14]",
+    "erreurs": "{'numero': \"'AAAA0003' → Longueur invalide (8 au lieu de 7)\", 'notes': \"Pas d'examen pour MATH (manque ':')\"}"
+  },
+  {
+    "code": "AMC002",
+    "numero": "AAAA0004",
+    "nom": "DIOP",
+    "prenom": "KHADIM",
+    "date_naissance": "04/02/2011",
+    "classe": "6emeB",
+    "notes": "MATH[11|14|20]#PC[12|13:15]#SVT[10|13:16]#FRANÇAIS[10|11:14]#ANGLAIS[11|11:20]#HG[10|12|14]",
+    "erreurs": "{'numero': \"'AAAA0004' → Longueur invalide (8 au lieu de 7)\", 'notes': \"Pas d'examen pour MATH (manque ':')\"}"
+  },
+  {
+    "code": "AMC002",
+    "numero": "AAAA0005",
+    "nom": "FALL",
+    "prenom": "KATY",
+    "date_naissance": "05/11/2010",
+    "classe": "6emeA",
+    "notes": "MATH[11|14|20]#PC[12|13:15]#SVT[10|13:16]#FRANÇAIS[10|11:14]#ANGLAIS[11|11:20]#HG[10|12|14]",
+    "erreurs": "{'numero': \"'AAAA0005' → Longueur invalide (8 au lieu de 7)\", 'notes': \"Pas d'examen pour MATH (manque ':')\"}"
+  },
+  {
+    "code": "AMC002",
+    "numero": "AAAA0006",
+    "nom": "NDIAYE",
+    "prenom": "SOKHNA",
+    "date_naissance": "06/08/2007",
+    "classe": "4emeB",
+    "notes": "MATH[11|14|20]#PC[12|13:15]#SVT[10|13:16]#FRANÇAIS[10|11:14]#ANGLAIS[11|11:20]#HG[10|12|14]",
+    "erreurs": "{'numero': \"'AAAA0006' → Longueur invalide (8 au lieu de 7)\", 'notes': \"Pas d'examen pour MATH (manque ':')\"}"
+  },
+  {
+    "code": "AMC002",
+    "numero": "AAAA0007",
+    "nom": "MBAYE",
+    "prenom": "CHEIKH",
+    "date_naissance": "07/06/2007",
+    "classe": "4emeA",
+    "notes": "MATH[11|14|20]#PC[12|13:15]#SVT[10|13:16]#FRANÇAIS[10|11:14]#ANGLAIS[11|11:20]#HG[10|12|14]",
+    "erreurs": "{'numero': \"'AAAA0007' → Longueur invalide (8 au lieu de 7)\", 'notes': \"Pas d'examen pour MATH (manque ':')\"}"
+  },
+  {
+    "code": "AMC002",
+    "numero": "AAAA0008",
+    "nom": "POUYE",
+    "prenom": "PALLA",
+    "date_naissance": "08/08/2007",
+    "classe": "5emeB",
+    "notes": "MATH[11|14|20]#PC[12|13:15]#SVT[10|13:16]#FRANÇAIS[10|11:14]#ANGLAIS[11|11:20]#HG[10|12|14]",
+    "erreurs": "{'numero': \"'AAAA0008' → Longueur invalide (8 au lieu de 7)\", 'notes': \"Pas d'examen pour MATH (manque ':')\"}"
+  },
+  {
+    "code": "AMC002",
+    "numero": "AAAA0009",
+    "nom": "OUATARA",
+    "prenom": "THIERNO",
+    "date_naissance": "09/09/2007",
+    "classe": "5emeA",
+    "notes": "MATH[11|14|20]#PC[12|13:15]#SVT[10|13:16]#FRANÇAIS[10|11:14]#ANGLAIS[11|11:20]#HG[10|12|14]",
+    "erreurs": "{'numero': \"'AAAA0009' → Longueur invalide (8 au lieu de 7)\", 'notes': \"Pas d'examen pour MATH (manque ':')\"}"
+  },
+  {
+    "code": "AMD013",
+    "numero": "Z7812Z3",
+    "nom": "DIOUF",
+    "prenom": "MALICK",
+    "date_naissance": "05:42:18",
+    "classe": "4emeB",
+    "notes": "{'HG': {'devoirs': [11.0, 15.0], 'examen': 18.0, 'moyenne': 16.33}, 'PC': {'devoirs': [15.0], 'examen': 18.0, 'moyenne': 17.0}, 'Francais': {'devoirs': [12.0, 13.0], 'examen': 11.0, 'moyenne': 11.5}, 'SVT': {'devoirs': [13.0, 14.0], 'examen': 15.0, 'moyenne': 14.5}, 'Math': {'devoirs': [11.0], 'examen': 16.0, 'moyenne': 14.33}, 'Anglais': {'devoirs': [11.0, 14.0], 'examen': 16.0, 'moyenne': 14.83}}",
+    "erreurs": "{'date_naissance': \"'05:42:18' → Format de date non reconnu : '05:42:18'\"}"
+  },
+  {
+    "code": "AMG015",
+    "numero": "SONA010",
+    "nom": "FALL",
+    "prenom": "KHADY",
+    "date_naissance": "07-06-199Ç",
+    "classe": "6emeB",
+    "notes": "{'Math': {'devoirs': [4.0, 3.0], 'examen': 5.0, 'moyenne': 4.5}, 'Francais': {'devoirs': [15.0, 16.0], 'examen': 14.0, 'moyenne': 14.5}, 'Anglais': {'devoirs': [15.0, 16.0], 'examen': 17.0, 'moyenne': 16.5}, 'PC': {'devoirs': [4.0, 3.0], 'examen': 7.0, 'moyenne': 5.83}, 'SVT': {'devoirs': [12.0, 9.0], 'examen': 10.0, 'moyenne': 10.17}, 'HG': {'devoirs': [16.0, 15.0], 'examen': 17.0, 'moyenne': 16.5}}",
+    "erreurs": "{'date_naissance': \"'07-06-199Ç' → Format de date non reconnu : '07-06-199Ç'\"}"
+  },
+  {
+    "code": "AMK016",
+    "numero": "K771427",
+    "nom": "Sy",
+    "prenom": "Malick",
+    "date_naissance": "05:42:18",
+    "classe": "6emeB",
+    "notes": "{'Math': {'devoirs': [12.0, 14.0, 11.0], 'examen': 19.0, 'moyenne': 16.78}, 'PC': {'devoirs': [10.0, 11.0], 'examen': 13.0, 'moyenne': 12.17}, 'Francais': {'devoirs': [10.0], 'examen': 12.0, 'moyenne': 11.33}, 'SVT': {'devoirs': [13.0], 'examen': 19.0, 'moyenne': 17.0}, 'HG': {'devoirs': [16.0], 'examen': 14.0, 'moyenne': 14.67}, 'Anglais': {'devoirs': [10.0, 17.0], 'examen': 17.0, 'moyenne': 15.83}}",
+    "erreurs": "{'date_naissance': \"'05:42:18' → Format de date non reconnu : '05:42:18'\"}"
+  },
+  {
+    "code": "AOD010",
+    "numero": "DKZGS12",
+    "nom": "diop",
+    "prenom": "Ousmane",
+    "date_naissance": "1 fev 2004",
+    "classe": "5emeB",
+    "notes": "{'Math': {'devoirs': [14.0, 10.0], 'examen': 12.0, 'moyenne': 12.0}, 'PC': {'devoirs': [9.0], 'examen': 12.0, 'moyenne': 11.0}, 'Francais': {'devoirs': [14.0, 14.0], 'examen': 15.0, 'moyenne': 14.67}, 'SVT': {'devoirs': [16.0, 11.0], 'examen': 17.0, 'moyenne': 15.83}, 'HG': {'devoirs': [16.0], 'examen': 14.0, 'moyenne': 14.67}, 'Anglais': {'devoirs': [13.1], 'examen': 11.0, 'moyenne': 11.7}}",
+    "erreurs": "{'date_naissance': \"'1 fev 2004' → Format de date non reconnu : '1 fev 2004'\"}"
+  },
+  {
+    "code": "AOD010",
+    "numero": "DLEDQDO",
+    "nom": "ndiaye",
+    "prenom": "abdou",
+    "date_naissance": "21/03/2005",
+    "classe": "4emeA",
+    "notes": "{'HG': {'devoirs': [11.0, 15.0], 'examen': 18.0, 'moyenne': 16.33}, 'PC': {'devoirs': [15.0], 'examen': 18.0, 'moyenne': 17.0}, 'Francais': {'devoirs': [12.0, 13.0], 'examen': 11.0, 'moyenne': 11.5}, 'SVT': {'devoirs': [13.0, 14.0], 'examen': 15.0, 'moyenne': 14.5}, 'Math': {'devoirs': [11.0], 'examen': 16.0, 'moyenne': 14.33}, 'Anglais': {'devoirs': [11.0, 14.0], 'examen': 16.0, 'moyenne': 14.83}}",
+    "erreurs": "{'numero': \"'DLEDQDO' → Le numéro doit contenir au moins un chiffre\"}"
+  },
+  {
+    "code": "AOD010",
+    "numero": "LFNJESM",
+    "nom": "sambou",
+    "prenom": "jean",
+    "date_naissance": "19/05/2006",
+    "classe": "5emeB",
+    "notes": "{'SVT': {'devoirs': [13.0], 'examen': 15.0, 'moyenne': 14.33}, 'PC': {'devoirs': [19.0], 'examen': 20.0, 'moyenne': 19.67}, 'Anglais': {'devoirs': [5.0, 9.0], 'examen': 9.0, 'moyenne': 8.33}, 'Math': {'devoirs': [18.0, 16.0], 'examen': 17.0, 'moyenne': 17.0}, 'HG': {'devoirs': [10.0], 'examen': 11.0, 'moyenne': 10.67}, 'Francais': {'devoirs': [13.12], 'examen': 10.0, 'moyenne': 11.04}}",
+    "erreurs": "{'numero': \"'LFNJESM' → Le numéro doit contenir au moins un chiffre\"}"
+  },
+  {
+    "code": "AOD010",
+    "numero": "JGRHFNE",
+    "nom": "sy",
+    "prenom": "pathe",
+    "date_naissance": "31/01/2006",
+    "classe": "5emeA",
+    "notes": "{'SVT': {'devoirs': [12.0], 'examen': 11.0, 'moyenne': 11.33}, 'PC': {'devoirs': [12.0], 'examen': 11.0, 'moyenne': 11.33}, 'Anglais': {'devoirs': [15.0, 14.0], 'examen': 12.0, 'moyenne': 12.83}, 'Math': {'devoirs': [13.0], 'examen': 13.0, 'moyenne': 13.0}, 'HG': {'devoirs': [12.0], 'examen': 14.0, 'moyenne': 13.33}, 'Francais': {'devoirs': [14.11], 'examen': 14.0, 'moyenne': 14.04}}",
+    "erreurs": "{'numero': \"'JGRHFNE' → Le numéro doit contenir au moins un chiffre\"}"
+  },
+  {
+    "code": "BMP019",
+    "numero": "NO895G",
+    "nom": "DIOUF",
+    "prenom": "Ibou",
+    "date_naissance": "07/11/1994",
+    "classe": "5emeB",
+    "notes": "{'Math': {'devoirs': [9.0, 10.5, 11.0], 'examen': 16.0, 'moyenne': 14.06}, 'PC': {'devoirs': [12.0, 13.0], 'examen': 19.0, 'moyenne': 16.83}, 'Francais': {'devoirs': [10.0, 11.0], 'examen': 13.0, 'moyenne': 12.17}, 'SVT': {'devoirs': [15.0, 9.0, 16.0, 11.0], 'examen': 12.0, 'moyenne': 12.25}, 'HG': {'devoirs': [13.0], 'examen': 13.0, 'moyenne': 13.0}, 'Anglais': {'devoirs': [13.12], 'examen': 15.0, 'moyenne': 14.37}}",
+    "erreurs": "{'numero': \"'NO895G' → Longueur invalide (6 au lieu de 7)\"}"
+  },
+  {
+    "code": "BNT021",
+    "numero": "NT129YK",
+    "nom": "T8UR5",
+    "prenom": "Kine",
+    "date_naissance": "12.32.1990",
+    "classe": "4emeA",
+    "notes": "{'SVT': {'devoirs': [12.0, 18.0], 'examen': 16.0, 'moyenne': 15.67}, 'PC': {'devoirs': [13.0, 16.0], 'examen': 19.0, 'moyenne': 17.5}, 'Francais': {'devoirs': [24.0, 15.0], 'examen': 12.0, 'moyenne': 14.5}, 'Anglais': {'devoirs': [17.0, 19.0], 'examen': 11.0, 'moyenne': 13.33}, 'HG': {'devoirs': [0.0, 7.0], 'examen': 2.0, 'moyenne': 2.5}, 'Math': {'devoirs': [11.0, 13.0], 'examen': 14.0, 'moyenne': 13.33}}",
+    "erreurs": "{'date_naissance': \"'12.32.1990' → Format de date non reconnu : '12.32.1990'\"}"
+  },
+  {
+    "code": "BNT021",
+    "numero": "12OUITY7",
+    "nom": "Fall",
+    "prenom": "H654F",
+    "date_naissance": "26/12/1988",
+    "classe": "5emeB",
+    "notes": "{'SVT': {'devoirs': [0.0, 10.0], 'examen': 12.0, 'moyenne': 9.67}, 'PC': {'devoirs': [13.0, 12.0], 'examen': 10.0, 'moyenne': 10.83}, 'Francais': {'devoirs': [12.0, 11.0], 'examen': 13.0, 'moyenne': 12.5}, 'Anglais': {'devoirs': [11.0, 12.0], 'examen': 12.0, 'moyenne': 11.83}, 'HG': {'devoirs': [12.0, 13.0], 'examen': 3.0, 'moyenne': 6.17}, 'Math': {'devoirs': [0.0, 15.0], 'examen': 11.0, 'moyenne': 9.83}}",
+    "erreurs": "{'numero': \"'12OUITY7' → Longueur invalide (8 au lieu de 7)\", 'prenom': \"'H654F' → Le prénom doit contenir au moins 3 lettres (trouvé : 2)\"}"
+  },
+  {
+    "code": "BNT021",
+    "numero": "12DREY89",
+    "nom": "Sall",
+    "prenom": "Dibor",
+    "date_naissance": "None",
+    "classe": "6emeC",
+    "notes": "{'SVT': {'devoirs': [12.0, 18.0], 'examen': 16.0, 'moyenne': 15.67}, 'PC': {'devoirs': [13.0, 16.0], 'examen': 19.0, 'moyenne': 17.5}, 'Francais': {'devoirs': [24.0, 15.0], 'examen': 12.0, 'moyenne': 14.5}, 'Anglais': {'devoirs': [17.0, 19.0], 'examen': 11.0, 'moyenne': 13.33}, 'HG': {'devoirs': [0.0, 7.0], 'examen': 2.0, 'moyenne': 2.5}, 'Math': {'devoirs': [11.0, 13.0], 'examen': 14.0, 'moyenne': 13.33}}",
+    "erreurs": "{'numero': \"'12DREY89' → Longueur invalide (8 au lieu de 7)\", 'date_naissance': \"'None' → Date manquante\"}"
+  },
+  {
+    "code": "BNT021",
+    "numero": "BT3456YH",
+    "nom": "Dingka",
+    "prenom": "Kaba",
+    "date_naissance": "12/05/1997",
+    "classe": "4emeA",
+    "notes": "{'SVT': {'devoirs': [13.0, 15.0], 'examen': 17.0, 'moyenne': 16.0}, 'PC': {'devoirs': [11.0, 18.0], 'examen': 20.0, 'moyenne': 18.17}, 'Francais': {'devoirs': [12.0, 11.0], 'examen': 13.0, 'moyenne': 12.5}, 'Anglais': {'devoirs': [0.0, 2.0], 'examen': 1.0, 'moyenne': 1.0}, 'HG': {'devoirs': [0.0, 5.0], 'examen': 0.0, 'moyenne': 0.83}, 'Math': {'devoirs': [10.0, 1.0], 'examen': 9.0, 'moyenne': 7.83}}",
+    "erreurs": "{'numero': \"'BT3456YH' → Longueur invalide (8 au lieu de 7)\"}"
+  },
+  {
+    "code": "BNT021",
+    "numero": "DR765TR4",
+    "nom": "Ndiaye",
+    "prenom": "Ndeye",
+    "date_naissance": "23/05/1996",
+    "classe": "5emeD",
+    "notes": "{'SVT': {'devoirs': [13.0, 19.0], 'examen': 14.0, 'moyenne': 14.67}, 'PC': {'devoirs': [0.0, 13.0], 'examen': 10.0, 'moyenne': 8.83}, 'Francais': {'devoirs': [4.0, 10.0], 'examen': 17.0, 'moyenne': 13.67}, 'Anglais': {'devoirs': [12.0, 13.0], 'examen': 17.0, 'moyenne': 15.5}, 'HG': {'devoirs': [5.0, 8.0], 'examen': 9.0, 'moyenne': 8.17}, 'Math': {'devoirs': [10.0, 14.0], 'examen': 17.0, 'moyenne': 15.33}}",
+    "erreurs": "{'numero': \"'DR765TR4' → Longueur invalide (8 au lieu de 7)\"}"
+  },
+  {
+    "code": "BNT021",
+    "numero": "GT3456YT",
+    "nom": "Diop",
+    "prenom": "Sokhna",
+    "date_naissance": "23/08/1992",
+    "classe": "4emeA",
+    "notes": "{'SVT': {'devoirs': [11.0, 13.0], 'examen': 19.0, 'moyenne': 16.67}, 'PC': {'devoirs': [11.0, 14.0], 'examen': 17.0, 'moyenne': 15.5}, 'Francais': {'devoirs': [12.0, 13.0], 'examen': 16.0, 'moyenne': 14.83}, 'Anglais': {'devoirs': [18.0, 15.0], 'examen': 13.0, 'moyenne': 14.17}, 'HG': {'devoirs': [10.0, 4.0], 'examen': 9.0, 'moyenne': 8.33}, 'Math': {'devoirs': [14.0, 16.0], 'examen': 19.0, 'moyenne': 17.67}}",
+    "erreurs": "{'numero': \"'GT3456YT' → Longueur invalide (8 au lieu de 7)\"}"
+  },
+  {
+    "code": "BNT021",
+    "numero": "34FT768H",
+    "nom": "Dioum",
+    "prenom": "Khoudia",
+    "date_naissance": "12/09/1995",
+    "classe": "6emeB",
+    "notes": "SVT[00|12:12] #PC[10|15:17] #Francais[00|02:13] #SVT[13|1à:14] #Anglais[14|18:15] #HG[20|15:09] #Math[10|12:16]",
+    "erreurs": "{'numero': \"'34FT768H' → Longueur invalide (8 au lieu de 7)\", 'notes': \"Note de devoir invalide '1à' pour SVT\"}"
+  },
+  {
+    "code": "BNT021",
+    "numero": "45TGFD67",
+    "nom": "King",
+    "prenom": "Kine",
+    "date_naissance": "24/05/1998",
+    "classe": "6emeC",
+    "notes": "{'SVT': {'devoirs': [11.0, 8.0], 'examen': 6.0, 'moyenne': 7.17}, 'PC': {'devoirs': [10.0, 12.0], 'examen': 10.0, 'moyenne': 10.33}, 'Francais': {'devoirs': [20.0, 19.0], 'examen': 14.0, 'moyenne': 15.83}, 'Anglais': {'devoirs': [11.0, 19.0], 'examen': 15.0, 'moyenne': 15.0}, 'HG': {'devoirs': [13.0, 15.0], 'examen': 20.0, 'moyenne': 18.0}, 'Math': {'devoirs': [17.0, 18.0], 'examen': 19.0, 'moyenne': 18.5}}",
+    "erreurs": "{'numero': \"'45TGFD67' → Longueur invalide (8 au lieu de 7)\"}"
+  },
+  {
+    "code": "BNT021",
+    "numero": "VFT34UYT",
+    "nom": "Fakha",
+    "prenom": "Fatou",
+    "date_naissance": "23/09/1995",
+    "classe": "3emeA",
+    "notes": "{'SVT': {'devoirs': [11.0, 12.0], 'examen': 18.0, 'moyenne': 15.83}, 'PC': {'devoirs': [17.0, 16.0], 'examen': 14.0, 'moyenne': 14.83}, 'Francais': {'devoirs': [20.0, 15.0], 'examen': 18.0, 'moyenne': 17.83}, 'Anglais': {'devoirs': [12.0, 13.0], 'examen': 16.0, 'moyenne': 14.83}, 'HG': {'devoirs': [18.0, 14.0], 'examen': 18.0, 'moyenne': 17.33}, 'Math': {'devoirs': [16.0, 18.0], 'examen': 10.0, 'moyenne': 12.33}}",
+    "erreurs": "{'numero': \"'VFT34UYT' → Longueur invalide (8 au lieu de 7)\"}"
+  },
+  {
+    "code": "BNT021",
+    "numero": "FTR3456G",
+    "nom": "Drame",
+    "prenom": "Rama",
+    "date_naissance": "12/03/1992",
+    "classe": "5emeB",
+    "notes": "{'SVT': {'devoirs': [16.0, 19.0], 'examen': 14.0, 'moyenne': 15.17}, 'PC': {'devoirs': [13.0, 14.0], 'examen': 10.0, 'moyenne': 11.17}, 'Francais': {'devoirs': [14.0, 18.0], 'examen': 19.0, 'moyenne': 18.0}, 'Anglais': {'devoirs': [14.0, 15.0], 'examen': 18.0, 'moyenne': 16.83}, 'HG': {'devoirs': [10.0, 7.0], 'examen': 20.0, 'moyenne': 16.17}, 'Math': {'devoirs': [19.0, 17.0], 'examen': 18.0, 'moyenne': 18.0}}",
+    "erreurs": "{'numero': \"'FTR3456G' → Longueur invalide (8 au lieu de 7)\"}"
+  }
+]
