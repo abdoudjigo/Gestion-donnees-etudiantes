@@ -223,8 +223,8 @@ uvicorn main:app --reload
 
 | Version | Description |
 |---|---|
-| v0.1 | Structure du projet + README |
-| v0.2 | Backend : connexion DB + routes étudiants |
+| v0.1 | Structure du projet + README | ✅ Fait
+| v0.2 | Backend : connexion DB + routes étudiants | ✅ Fait
 | v0.3 | Pagination intelligente DB + JSON |
 | v0.4 | Frontend : affichage + fetch |
 | v0.5 | Dashboard + Chart.js |
