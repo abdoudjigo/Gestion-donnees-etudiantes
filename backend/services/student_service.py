@@ -1,7 +1,13 @@
 from database import get_connection
+from services.pagination_service import get_pagination_params
 
-#on va recuperer toute les etudiants avec leurs moyennes
-def get_etudiants():
+# =====================================================
+# GET ETUDIANTS AVEC PAGINATION
+# =====================================================
+def get_etudiants(page: int = 1, limit: int = 10):
+
+    pagination = get_pagination_params(page, limit)
+
     connection = get_connection()
     cursor = connection.cursor()
 
@@ -13,37 +19,49 @@ def get_etudiants():
             e.numero,
             c.nom_classe,
             AVG(n.valeur) as moyenne
+
         FROM etudiants e
         LEFT JOIN notes n ON e.id = n.etudiant_id
         LEFT JOIN classes c ON e.classe_id = c.id
-        GROUP BY e.id, c.nom_classe
-        ORDER BY e.id;
-    """)
 
-    nbr_lignes = cursor.fetchall()
+        GROUP BY e.id, c.nom_classe
+        ORDER BY e.id
+        LIMIT %s OFFSET %s
+    """, (
+        pagination["limit"],
+        pagination["offset"]
+    ))
+
+    rows = cursor.fetchall()
 
     cursor.close()
     connection.close()
 
-    return nbr_lignes
+    return rows
 
-#on transforme en JSOn
-def format_etudiants(nbr_lignes):
-    etudiants = []
 
-    for ligne in nbr_lignes:
-        etudiants.append({
-            "id": ligne[0],
-            "nom": ligne[1],
-            "prenom": ligne[2],
-            "numero": ligne[3],
-            "classe": ligne[4],
-            #si pas de note avg return null
-            "moyenne": float(ligne[5]) if ligne[5] else None
-        })
+# =====================================================
+# FORMATAGE JSON
+# =====================================================
+def format_etudiants(rows):
 
-    return etudiants
+    return [
+        {
+            "id": r[0],
+            "nom": r[1],
+            "prenom": r[2],
+            "numero": r[3],
+            "classe": r[4],
+            "moyenne": float(r[5]) if r[5] else None
+        }
+        for r in rows
+    ]
 
-def get_all_etudiants():
-    nbr_lignes = get_etudiants()
-    return format_etudiants(nbr_lignes)
+
+# =====================================================
+# SERVICE PRINCIPAL
+# =====================================================
+def get_all_etudiants(page: int = 1, limit: int = 10):
+
+    rows = get_etudiants(page, limit)
+    return format_etudiants(rows)
