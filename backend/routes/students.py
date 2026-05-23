@@ -134,6 +134,75 @@ def update_student(student_id: int, student: dict):
         "success": True,
         "message": f"Étudiant {student_id} modifié"
     }
+
+# =====================================================
+# GET /students/archives
+# retourne les étudiants archivés
+# =====================================================
+@router.get("/archives")
+def get_archives():
+
+    connection = get_connection()
+    cursor = connection.cursor()
+
+    cursor.execute("""
+        SELECT 
+            e.id,
+            e.nom,
+            e.prenom,
+            e.numero,
+            c.nom_classe
+        FROM etudiants e
+        LEFT JOIN classes c ON e.classe_id = c.id
+        WHERE e.archived = TRUE
+        ORDER BY e.id
+    """)
+
+    rows = cursor.fetchall()
+    cursor.close()
+    connection.close()
+
+    return {
+        "success": True,
+        "data": [
+            {
+                "id": r[0],
+                "nom": r[1],
+                "prenom": r[2],
+                "numero": r[3],
+                "classe": r[4]
+            }
+            for r in rows
+        ]
+    }
+
+
+# =====================================================
+# POST /students/{id}/restore
+# restaurer un étudiant archivé
+# =====================================================
+@router.post("/{student_id}/restore")
+def restore_student(student_id: int):
+
+    connection = get_connection()
+    cursor = connection.cursor()
+
+    cursor.execute("""
+        UPDATE etudiants
+        SET archived = FALSE
+        WHERE id = %s
+    """, (student_id,))
+
+    connection.commit()
+    cursor.close()
+    connection.close()
+
+    return {
+        "success": True,
+        "message": f"Étudiant {student_id} restauré"
+    }
+
+
 # =====================================================
 # TODO : PUT /students/{id}
 # modification d'un étudiant (DB uniquement)
