@@ -204,6 +204,77 @@ def restore_student(student_id: int):
 
 
 # =====================================================
+# GET /students/{id}
+# retourne le détail d'un étudiant avec ses notes
+# =====================================================
+@router.get("/{student_id}")
+def get_student(student_id: int):
+
+    connection = get_connection()
+    cursor = connection.cursor()
+
+    # infos étudiant
+    cursor.execute("""
+        SELECT 
+            e.id,
+            e.nom,
+            e.prenom,
+            e.numero,
+            e.code,
+            e.date_naissance,
+            c.nom_classe
+        FROM etudiants e
+        LEFT JOIN classes c ON e.classe_id = c.id
+        WHERE e.id = %s
+        AND e.archived = FALSE
+    """, (student_id,))
+
+    etudiant = cursor.fetchone()
+
+    if not etudiant:
+        return {"success": False, "message": "Étudiant non trouvé"}
+
+    # notes de l'étudiant
+    cursor.execute("""
+        SELECT 
+            m.nom_matiere,
+            n.nom_evaluation,
+            n.type_evaluation,
+            n.valeur
+        FROM notes n
+        LEFT JOIN matieres m ON n.matiere_id = m.id
+        WHERE n.etudiant_id = %s
+        ORDER BY m.nom_matiere, n.nom_evaluation
+    """, (student_id,))
+
+    notes = cursor.fetchall()
+
+    cursor.close()
+    connection.close()
+
+    return {
+        "success": True,
+        "data": {
+            "id": etudiant[0],
+            "nom": etudiant[1],
+            "prenom": etudiant[2],
+            "numero": etudiant[3],
+            "code": etudiant[4],
+            "date_naissance": str(etudiant[5]),
+            "classe": etudiant[6],
+            "notes": [
+                {
+                    "matiere": n[0],
+                    "evaluation": n[1],
+                    "type": n[2],
+                    "valeur": float(n[3])
+                }
+                for n in notes
+            ]
+        }
+    }
+
+# =====================================================
 # TODO : PUT /students/{id}
 # modification d'un étudiant (DB uniquement)
 # =====================================================
