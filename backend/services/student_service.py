@@ -3,7 +3,7 @@ from services.pagination_service import get_pagination_params
 
 
 # =====================================================
-# GET ETUDIANTS
+# GET ETUDIANTS DEPUIS POSTGRESQL
 # =====================================================
 def get_etudiants(page=1, limit=10, search=None):
 
@@ -13,7 +13,8 @@ def get_etudiants(page=1, limit=10, search=None):
     cursor = connection.cursor()
 
     # =========================================
-    # REQUETE SQL DE BASE
+    # REQUETE DE BASE
+    # on filtre les archivés dès le départ
     # =========================================
     query = """
         SELECT 
@@ -31,32 +32,32 @@ def get_etudiants(page=1, limit=10, search=None):
 
         LEFT JOIN classes c 
             ON e.classe_id = c.id
+
+        WHERE e.archived = FALSE
     """
 
-    params = [] #liste des param SQL
+    params = []
 
     # =========================================
-    # AJOUT RECHERCHE SI search EXISTE
+    # RECHERCHE DYNAMIQUE
+    # si search existe on ajoute AND
+    # ILIKE = insensible à la casse
     # =========================================
     if search:
-
         query += """
-            WHERE 
+            AND (
                 e.nom ILIKE %s
                 OR e.prenom ILIKE %s
                 OR e.numero ILIKE %s
+            )
         """
-
         search_value = f"%{search}%"
-
-        params.extend([
-            search_value,
-            search_value,
-            search_value
-        ])
+        params.extend([search_value, search_value, search_value])
 
     # =========================================
     # FIN REQUETE
+    # GROUP BY obligatoire avec AVG()
+    # LIMIT/OFFSET pour la pagination
     # =========================================
     query += """
         GROUP BY e.id, c.nom_classe
@@ -64,14 +65,9 @@ def get_etudiants(page=1, limit=10, search=None):
         LIMIT %s OFFSET %s
     """
 
-    params.extend([
-        pagination["limit"],
-        pagination["offset"]
-    ])
+    params.extend([pagination["limit"], pagination["offset"]])
 
-    # EXECUTION SQL
     cursor.execute(query, tuple(params))
-
     rows = cursor.fetchall()
 
     cursor.close()
@@ -82,19 +78,20 @@ def get_etudiants(page=1, limit=10, search=None):
 
 # =====================================================
 # FORMAT JSON
+# transforme les tuples PostgreSQL en dicts Python
 # =====================================================
 def format_etudiants(rows):
 
     etudiants = []
 
     for ligne in rows:
-
         etudiants.append({
             "id": ligne[0],
             "nom": ligne[1],
             "prenom": ligne[2],
             "numero": ligne[3],
             "classe": ligne[4],
+            # AVG retourne None si pas de notes
             "moyenne": float(ligne[5]) if ligne[5] else None
         })
 
@@ -103,9 +100,9 @@ def format_etudiants(rows):
 
 # =====================================================
 # SERVICE PRINCIPAL
+# appelé par routes/students.py
 # =====================================================
 def get_all_etudiants(page=1, limit=10, search=None):
 
     rows = get_etudiants(page, limit, search)
-
     return format_etudiants(rows)

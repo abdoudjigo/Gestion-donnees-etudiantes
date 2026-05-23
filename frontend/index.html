@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gestion Étudiants</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+
+    <h1>Liste des étudiants</h1>
+
+    <input type="text" id="searchInput" placeholder="Rechercher étudiant...">
+
+    <div id="students-container"></div>
+    <div id="pagination">
+        <button id="btnPrev">← Précédent</button>
+        <span id="pageInfo">Page 1</span>
+        <button id="btnNext">Suivant →</button>
+    </div>
+
+    <h2>Ajouter un étudiant</h2>
+
+    <input id="nom" placeholder="Nom">
+    <input id="prenom" placeholder="Prénom">
+    <input id="numero" placeholder="Numéro">
+    <input id="classe" placeholder="Classe">
+
+    <button id="addBtn">Ajouter</button>
+
+</body>
+</html>
