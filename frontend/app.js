@@ -24,8 +24,11 @@ async function loadStudents(search = "", page = 1) {
     result.data.forEach(etudiant => {
 
         container.innerHTML += `
-            <div class="student-card">
-                <h3>${etudiant.nom} ${etudiant.prenom}</h3>
+            <div class="student-card" id="card-${etudiant.id}">
+                <h3 ondblclick="editField(this, ${etudiant.id}, 'nom')">${etudiant.nom}</h3>
+                <h3 ondblclick="editField(this, ${etudiant.id}, 'prenom')">${etudiant.prenom}</h3>
+
+        
                 <p><strong>Numéro :</strong> ${etudiant.numero}</p>
                 <p><strong>Classe :</strong> ${etudiant.classe}</p>
                 <p><strong>Moyenne :</strong> ${etudiant.moyenne?.toFixed(2) ?? "N/A"}</p>
@@ -123,6 +126,56 @@ async function loadDashboard() {
     document.getElementById("totalEtudiants").textContent = data.total_etudiants;
     document.getElementById("moyenneGenerale").textContent = data.moyenne_generale.toFixed(2);
     document.getElementById("totalNotes").textContent = data.total_notes;
+}
+
+
+// =====================================================
+// MODIFICATION INLINE (double-clic)
+// Entrée = sauvegarder
+// Échap = annuler
+// =====================================================
+function editField(element, id, field) {
+
+    const ancienneValeur = element.textContent;
+
+    // transformer en champ éditable
+    element.innerHTML = `<input 
+        type="text" 
+        value="${ancienneValeur}" 
+        id="input-${id}-${field}"
+    >`;
+
+    const input = document.getElementById(`input-${id}-${field}`);
+    input.focus();
+
+    // Entrée = sauvegarder
+    input.addEventListener("keydown", async (e) => {
+
+        if (e.key === "Enter") {
+
+            const nouvelleValeur = input.value;
+
+            await fetch(`http://127.0.0.1:8000/students/${id}`, {
+                method: "PUT",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    nom: field === "nom" ? nouvelleValeur : ancienneValeur,
+                    prenom: field === "prenom" ? nouvelleValeur : ancienneValeur,
+                    classe: element.closest(".student-card")
+                            .querySelector("p:nth-child(4)")
+                            .textContent.replace("Classe : ", "").trim()
+                })
+            });
+
+            // refresh
+            loadStudents(searchInput.value, currentPage);
+        }
+
+        // Échap = annuler
+        if (e.key === "Escape") {
+            element.textContent = ancienneValeur;
+        }
+    });
 }
 
 // =====================================================

@@ -102,6 +102,39 @@ def archive_student(student_id: int):
 
 
 # =====================================================
+# PUT /students/{id}
+# modification d'un étudiant (DB uniquement)
+# =====================================================
+@router.put("/{student_id}")
+def update_student(student_id: int, student: dict):
+
+    connection = get_connection()
+    cursor = connection.cursor()
+
+    cursor.execute("""
+        UPDATE etudiants
+        SET 
+            nom = %s,
+            prenom = %s,
+            classe_id = (SELECT id FROM classes WHERE nom_classe = %s)
+        WHERE id = %s
+        AND archived = FALSE
+    """, (
+        student["nom"],
+        student["prenom"],
+        student["classe"],
+        student_id
+    ))
+
+    connection.commit()
+    cursor.close()
+    connection.close()
+
+    return {
+        "success": True,
+        "message": f"Étudiant {student_id} modifié"
+    }
+# =====================================================
 # TODO : PUT /students/{id}
 # modification d'un étudiant (DB uniquement)
 # =====================================================
