@@ -1,66 +1,75 @@
 import json
+import ast
 import sys
+
 sys.path.append("/home/abdoulaye/Documents/Orange Digital center/Framework Python et APi/projetAPI/PROJECT_P8/backend")
+
 from database import get_connection
 
 
-#=============================================
-#fction synchronisé le JSON dans postgres
+# =====================================================
+# SYNCHRO ETUDIANTS
+# =====================================================
 def sync_etudiants():
 
     etudiant_insere = 0
     etudiant_skip = 0
 
-    #On charger ici le fichier JSOn 
-    with open("/home/abdoulaye/Documents/Orange Digital center/Framework Python et APi/projetAPI/PROJECT_P8/backend/data/valides.json", "r",  encoding="utf-8") as fichier :
+    # Charger JSON
+    with open(
+        "/home/abdoulaye/Documents/Orange Digital center/Framework Python et APi/projetAPI/PROJECT_P8/backend/data/valides.json",
+        "r",
+        encoding="utf-8"
+    ) as fichier:
         etudiants = json.load(fichier)
 
-    print(len(etudiants))
-    print(etudiants[0])
+    print("Total étudiants JSON :", len(etudiants))
 
-    #on se connect à la database
+    # Connexion DB
     connection = get_connection()
     cursor = connection.cursor()
 
-    #boucle sur les etudiants
     for etudiant in etudiants:
 
-        #on verifie s'il n'existe pas 
+        # Vérification existence (numero OU code)
         cursor.execute(
-            "SELECT id from etudiants WHERE numero = %s or code = %s",
-            (etudiant["numero"], etudiant["code"])
+            "SELECT id FROM etudiants WHERE numero = %s",
+            (etudiant["numero"],)
         )
 
         existe = cursor.fetchone()
+
         if existe:
             etudiant_skip += 1
             continue
 
-        #inserer si nouveau
+        # Insertion étudiant
         cursor.execute("""
             INSERT INTO etudiants (
-            code,
-            numero,
-            nom,
-            prenom,
-            date_naissance,
-            classe_id,
-            source
-        )
+                code,
+                numero,
+                nom,
+                prenom,
+                date_naissance,
+                classe_id,
+                source
+            )
             VALUES (
-            %s, %s, %s, %s, %s,
-            (SELECT id FROM classes WHERE nom_classe = %s),
-            %s
-        )
-    """,(
-        etudiant["code"],
-        etudiant["numero"],
-        etudiant["nom"],
-        etudiant["prenom"],
-        etudiant["date_naissance"],
-        etudiant["classe"],
-        "JSON"
-    ))
+                %s, %s, %s, %s, %s,
+                (SELECT id FROM classes WHERE nom_classe = %s),
+                %s
+            )
+            ON CONFLICT (numero) DO NOTHING
+
+        """, (
+            etudiant["code"],
+            etudiant["numero"],
+            etudiant["nom"],
+            etudiant["prenom"],
+            etudiant["date_naissance"],
+            etudiant["classe"],
+            "JSON"
+        ))
 
         etudiant_insere += 1
 
@@ -70,53 +79,65 @@ def sync_etudiants():
 
     return {
         "insere": etudiant_insere,
-        "skip" : etudiant_skip
+        "skip": etudiant_skip
     }
 
 
-#=============================================
-#on fait pour les notes
-
+# =====================================================
+# SYNCHRO NOTES
+# =====================================================
 def sync_notes():
 
     connection = get_connection()
     cursor = connection.cursor()
 
-    with open("/home/abdoulaye/Documents/Orange Digital center/Framework Python et APi/projetAPI/PROJECT_P8/backend/data/valides.json", "r",  encoding="utf-8") as fichier :
+    with open(
+        "/home/abdoulaye/Documents/Orange Digital center/Framework Python et APi/projetAPI/PROJECT_P8/backend/data/valides.json",
+        "r",
+        encoding="utf-8"
+    ) as fichier:
         etudiants = json.load(fichier)
 
-    #boucle etudiants et récupérer etudiant_id
     for etudiant in etudiants:
+
+        # retrouver étudiant en base
         cursor.execute(
-            "SELECT id from etudiants WHERE numero = %s or code = %s",
-            (etudiant["numero"], etudiant["code"])
+            "SELECT id FROM etudiants WHERE numero = %s",
+            (etudiant["numero"],)
         )
 
         etudiant_db = cursor.fetchone()
+
         if not etudiant_db:
             continue
 
         etudiant_id = etudiant_db[0]
 
-        #et puisk le JSON est en string on le convertit
-        notes = eval(etudiant["notes"])
+        # convertir notes string → dict
+        notes = ast.literal_eval(etudiant["notes"])
 
-    #boucle sur matiere et récupérer matiere_id
         for matiere, details in notes.items():
+
+            # récupérer matière
             cursor.execute(
                 "SELECT id FROM matieres WHERE nom_matiere = %s",
                 (matiere,)
             )
 
             matiere_db = cursor.fetchone()
+
             if not matiere_db:
                 continue
+
             matiere_id = matiere_db[0]
 
-            #insertion des deveoirs
+            # =========================
+            # DEVOIRS
+            # =========================
             for i, devoir in enumerate(details["devoirs"]):
+
                 cursor.execute("""
-                    INSERT into notes (
+                    INSERT INTO notes (
                         etudiant_id,
                         matiere_id,
                         nom_evaluation,
@@ -124,19 +145,21 @@ def sync_notes():
                         valeur
                     )
                     VALUES (%s, %s, %s, %s, %s)
-
-                """ , (
+                        ON CONFLICT (etudiant_id, matiere_id, nom_evaluation)
+                        DO NOTHING
+                """, (
                     etudiant_id,
                     matiere_id,
                     f"Devoir {i+1}",
                     "devoir",
                     devoir
-                )
-                )
-                
-            #inserer examen
+            ))
+
+            # =========================
+            # EXAMEN
+            # =========================
             cursor.execute("""
-                INSERT into notes (
+                INSERT INTO notes (
                     etudiant_id,
                     matiere_id,
                     nom_evaluation,
@@ -144,21 +167,24 @@ def sync_notes():
                     valeur
                 )
                 VALUES (%s, %s, %s, %s, %s)
+                ON CONFLICT (etudiant_id, matiere_id, nom_evaluation)
+                DO NOTHING
             """, (
                 etudiant_id,
                 matiere_id,
                 "Examen",
                 "examen",
                 details["examen"]
-            )
-            )
+        ))
 
     connection.commit()
     cursor.close()
     connection.close()
-    
 
 
-
-sync_etudiants()
-sync_notes()
+# =====================================================
+# EXECUTION
+# =====================================================
+if __name__ == "__main__":
+    sync_etudiants()
+    sync_notes()
