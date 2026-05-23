@@ -113,8 +113,20 @@ async function archiveStudent(id) {
 
     loadStudents(); // refresh liste
 }
+async function loadDashboard() {
+
+    const response = await fetch("http://127.0.0.1:8000/dashboard/stats");
+    const result = await response.json();
+
+    const data = result.data;
+
+    document.getElementById("totalEtudiants").textContent = data.total_etudiants;
+    document.getElementById("moyenneGenerale").textContent = data.moyenne_generale.toFixed(2);
+    document.getElementById("totalNotes").textContent = data.total_notes;
+}
 
 // =====================================================
 // INITIAL LOAD
 // =====================================================
 loadStudents();
+loadDashboard();

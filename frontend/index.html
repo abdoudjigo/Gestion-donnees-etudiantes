@@ -26,9 +26,24 @@
     <input id="nom" placeholder="Nom">
     <input id="prenom" placeholder="Prénom">
     <input id="numero" placeholder="Numéro">
-    <input id="classe" placeholder="Classe">
+    <select id="classe">
+        <option value="">-- Choisir une classe --</option>
+        <option value="6emeA">6emeA</option>
+        <option value="6emeB">6emeB</option>
+        <option value="4emeA">4emeA</option>
+        <option value="4emeB">4emeB</option>
+        <option value="3emeC">3emeC</option>
+    </select>
 
     <button id="addBtn">Ajouter</button>
+
+    <h1>Dashboard</h1>
+
+    <div id="stats">
+        <p>Total étudiants: <span id="totalEtudiants">....</span></p>
+        <p>Moyenne générale: <span id="moyenneGenerale">....</span></p>
+        <p>Total notes: <strong id="totalNotes">.....</strong></p>
+    </div>
 
 </body>
 </html>
