@@ -31,7 +31,7 @@ def sync_etudiants():
 
     for etudiant in etudiants:
 
-        # Vérification existence (numero OU code)
+        # Vérification existe numero
         cursor.execute(
             "SELECT id FROM etudiants WHERE numero = %s",
             (etudiant["numero"],)
@@ -182,9 +182,7 @@ def sync_notes():
     connection.close()
 
 
-# =====================================================
 # EXECUTION
-# =====================================================
 if __name__ == "__main__":
     sync_etudiants()
     sync_notes()
