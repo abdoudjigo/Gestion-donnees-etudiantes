@@ -235,3 +235,21 @@ canvas {
     max-width: 100%;
     margin-bottom: 24px;
 }
+
+.badge {
+    display: inline-block;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    margin-top: 8px;
+}
+
+.badge-db {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.badge-json {
+    background: #e3f2fd;
+    color: #1565c0;
+}

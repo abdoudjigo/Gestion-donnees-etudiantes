@@ -23,22 +23,28 @@ async function loadStudents(search = "", page = 1) {
 
     result.data.forEach(etudiant => {
 
-        container.innerHTML += `
-            <div class="student-card" id="card-${etudiant.id}">
-                <h3 ondblclick="editField(this, ${etudiant.id}, 'nom')">${etudiant.nom}</h3>
-                <h3 ondblclick="editField(this, ${etudiant.id}, 'prenom')">${etudiant.prenom}</h3>
+        const badgeClass = etudiant.source === "DB" ? "badge-db" : "badge-json";
+        const editBtn = etudiant.editable 
+            ? `<button onclick="archiveStudent(${etudiant.id})">Archiver</button>`
+            : `<span style="font-size:12px; color:#999;">Lecture seule</span>`;
 
-        
+        container.innerHTML += `
+            <div class="student-card">
+                <h3 
+                    ondblclick="${etudiant.editable ? `editField(this, ${etudiant.id}, 'nom')` : ''}"
+                >${etudiant.nom}</h3>
+                <h3 
+                    ondblclick="${etudiant.editable ? `editField(this, ${etudiant.id}, 'prenom')` : ''}"
+                >${etudiant.prenom}</h3>
                 <p><strong>Numéro :</strong> ${etudiant.numero}</p>
                 <p><strong>Classe :</strong> ${etudiant.classe}</p>
                 <p><strong>Moyenne :</strong> ${etudiant.moyenne?.toFixed(2) ?? "N/A"}</p>
-
-                <!-- 👇 bouton archiver -->
-                <button onclick="archiveStudent(${etudiant.id})">
-                    Archiver
-                </button>
+                <span class="badge ${badgeClass}">${etudiant.source}</span>
+                <div style="margin-top: 10px;">
+                    ${editBtn}
+                </div>
             </div>
-        `;
+         `;
     });
 
     // update UI pagination

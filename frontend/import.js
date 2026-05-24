@@ -57,6 +57,7 @@ document.getElementById("importBtn").addEventListener("click", async () => {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
+                source : "JSON",
                 code: etudiant.code || "JSON_IMPORT",
                 nom: etudiant.nom,
                 prenom: etudiant.prenom,

@@ -4,7 +4,13 @@ from database import get_connection
 
 router = APIRouter()
 
+@router.post("/")
+def create_student(student: dict):
+    print("=== RECU ===", student)  # ← ajoute cette ligne
 
+    if student.get("source") == "JSON":
+        from services.sync_service import import_etudiant_avec_notes
+        return import_etudiant_avec_notes(student["numero"])
 # =====================================================
 # GET /students
 # retourne la liste paginée avec recherche optionnelle
