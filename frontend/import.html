@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Archives - Gestion Étudiants</title>
+    <title>Import JSON - Gestion Étudiants</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -15,12 +15,20 @@
         <a href="archives.html">🗄️ Archives</a>
         <a href="import.html">📥 Import JSON</a>
     </nav>
-    <div class="page"></div>
-        <h1>🗄️ Étudiants Archivés</h1>
 
-        <div id="archives-container"></div>
 
-        <script src="archives.js"></script>
+    <div class="page">
+    <h1>📥 Import JSON → PostgreSQL</h1>
+
+    <p id="importInfo">Chargement...</p>
+
+    <div id="import-container"></div>
+
+    <button id="importBtn" style="display:none">
+        ✅ Importer la sélection
+    </button>
+
+    <script src="import.js"></script>
     </div>
 </body>
 </html>

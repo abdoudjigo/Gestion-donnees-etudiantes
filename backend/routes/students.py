@@ -204,6 +204,51 @@ def restore_student(student_id: int):
 
 
 # =====================================================
+# GET /students/json-preview
+# retourne les étudiants du JSON pas encore en DB
+# =====================================================
+@router.get("/json-preview")
+def get_json_preview():
+
+    import json
+
+    with open("data/valides.json", "r", encoding="utf-8") as f:
+        etudiants_json = json.load(f)
+
+    connection = get_connection()
+    cursor = connection.cursor()
+
+    # récupérer tous les numeros déjà en DB
+    cursor.execute("SELECT numero FROM etudiants")
+    numeros_db = set(row[0] for row in cursor.fetchall())
+
+    cursor.close()
+    connection.close()
+
+    # garder seulement ceux qui ne sont pas en DB
+    non_importes = [
+        e for e in etudiants_json
+        if e["numero"] not in numeros_db
+    ]
+
+    return {
+        "success": True,
+        "count": len(non_importes),
+        "data": [
+            {
+                "numero": e["numero"],
+                "nom": e["nom"],
+                "prenom": e["prenom"],
+                "classe": e["classe"]
+            }
+            for e in non_importes
+        ]
+    }
+
+
+
+
+# =====================================================
 # GET /students/{id}
 # retourne le détail d'un étudiant avec ses notes
 # =====================================================
@@ -273,6 +318,8 @@ def get_student(student_id: int):
             ]
         }
     }
+
+
 
 # =====================================================
 # TODO : PUT /students/{id}
