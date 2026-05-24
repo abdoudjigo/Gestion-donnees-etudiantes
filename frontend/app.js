@@ -27,7 +27,10 @@ async function loadStudents(search = "", page = 1) {
         const editBtn = etudiant.editable 
             ? `<button onclick="archiveStudent(${etudiant.id})">Archiver</button>`
             : `<span style="font-size:12px; color:#999;">Lecture seule</span>`;
-
+        
+        const detailBtn = etudiant.editable
+            ? `<a href="detail.html?id=${etudiant.id}"><button>Détail</button></a>`
+            : "";
         container.innerHTML += `
             <div class="student-card">
                 <h3 
@@ -42,6 +45,7 @@ async function loadStudents(search = "", page = 1) {
                 <span class="badge ${badgeClass}">${etudiant.source}</span>
                 <div style="margin-top: 10px;">
                     ${editBtn}
+                    ${detailBtn}
                 </div>
             </div>
          `;
@@ -87,28 +91,39 @@ searchInput.addEventListener("input", (e) => {
     loadStudents(e.target.value, currentPage);
 });
 
+//ajout
 document.getElementById("addBtn").addEventListener("click", async () => {
+
+    const numero = document.getElementById("numero").value;
 
     const student = {
         code: "MANUAL_" + Date.now(),
         nom: document.getElementById("nom").value,
         prenom: document.getElementById("prenom").value,
-        numero: document.getElementById("numero").value,
+        numero: numero,
         date_naissance: "2000-01-01",
         classe: document.getElementById("classe").value
     };
 
-    await fetch("http://127.0.0.1:8000/students", {
+    const response = await fetch("http://127.0.0.1:8000/students/", {
         method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(student)
     });
 
-    alert("Étudiant ajouté");
+    const result = await response.json();
+    console.log("REPONSE AJOUT:", result);  // ← ajoute cette ligne
 
-    loadStudents();
+
+    if (result.success) {
+        alert("Étudiant ajouté !");
+        // rechercher directement par numéro pour l'afficher
+        searchInput.value = numero;
+        currentPage = 1;
+        loadStudents(numero, 1);
+    } else {
+        alert("Erreur : " + result.message);
+    }
 });
 
 

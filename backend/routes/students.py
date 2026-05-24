@@ -4,16 +4,64 @@ from database import get_connection
 
 router = APIRouter()
 
+
+# =====================================================
+# POST /students
+# deux cas :
+# 1. import JSON → appelle sync_service avec les notes
+# 2. ajout manuel → insertion directe en DB
+# =====================================================
 @router.post("/")
 def create_student(student: dict):
-    print("=== RECU ===", student)  # ← ajoute cette ligne
 
+    # cas 1 : import depuis la page import.html
+    # source = "JSON" envoyé par le frontend
     if student.get("source") == "JSON":
         from services.sync_service import import_etudiant_avec_notes
         return import_etudiant_avec_notes(student["numero"])
+
+    # cas 2 : ajout manuel depuis le formulaire index.html
+    connection = get_connection()
+    cursor = connection.cursor()
+
+    cursor.execute("""
+        INSERT INTO etudiants (
+            code,
+            numero,
+            nom,
+            prenom,
+            date_naissance,
+            classe_id,
+            source
+        )
+        VALUES (
+            %s, %s, %s, %s, %s,
+            (SELECT id FROM classes WHERE nom_classe = %s),
+            'DB'
+        )
+    """, (
+        student["code"],
+        student["numero"],
+        student["nom"],
+        student["prenom"],
+        student["date_naissance"],
+        student["classe"]
+    ))
+
+    connection.commit()
+    cursor.close()
+    connection.close()
+
+    return {
+        "success": True,
+        "message": "Étudiant ajouté"
+    }
+
+
 # =====================================================
 # GET /students
-# retourne la liste paginée avec recherche optionnelle
+# liste paginée avec recherche optionnelle
+# fusion DB + JSON gérée dans student_service
 # =====================================================
 @router.get("/")
 def read_etudiants(
@@ -34,116 +82,8 @@ def read_etudiants(
 
 
 # =====================================================
-# POST /students
-# ajouter un nouvel étudiant dans PostgreSQL
-# source = "DB" car ajout manuel
-# =====================================================
-@router.post("/")
-def create_student(student: dict):
-
-    connection = get_connection()
-    cursor = connection.cursor()
-
-    cursor.execute("""
-        INSERT INTO etudiants (
-            code,
-            numero,
-            nom,
-            prenom,
-            date_naissance,
-            classe_id,
-            source
-        )
-        VALUES (
-            %s, %s, %s, %s, %s,
-            (SELECT id FROM classes WHERE nom_classe = %s),
-            %s
-        )
-    """, (
-        student["code"],
-        student["numero"],
-        student["nom"],
-        student["prenom"],
-        student["date_naissance"],
-        student["classe"],
-        "DB"
-    ))
-
-    connection.commit()
-    cursor.close()
-    connection.close()
-
-    return {
-        "success": True,
-        "message": "Étudiant ajouté"
-    }
-
-
-# =====================================================
-# DELETE /students/{id}
-# archivage soft — on ne supprime JAMAIS
-# on met archived = TRUE
-# l'étudiant reste en base mais disparaît de la liste
-# =====================================================
-@router.delete("/{student_id}")
-def archive_student(student_id: int):
-
-    connection = get_connection()
-    cursor = connection.cursor()
-
-    cursor.execute("""
-        UPDATE etudiants
-        SET archived = TRUE
-        WHERE id = %s
-    """, (student_id,))
-
-    connection.commit()
-    cursor.close()
-    connection.close()
-
-    return {
-        "success": True,
-        "message": f"Étudiant {student_id} archivé"
-    }
-
-
-# =====================================================
-# PUT /students/{id}
-# modification d'un étudiant (DB uniquement)
-# =====================================================
-@router.put("/{student_id}")
-def update_student(student_id: int, student: dict):
-
-    connection = get_connection()
-    cursor = connection.cursor()
-
-    cursor.execute("""
-        UPDATE etudiants
-        SET 
-            nom = %s,
-            prenom = %s,
-            classe_id = (SELECT id FROM classes WHERE nom_classe = %s)
-        WHERE id = %s
-        AND archived = FALSE
-    """, (
-        student["nom"],
-        student["prenom"],
-        student["classe"],
-        student_id
-    ))
-
-    connection.commit()
-    cursor.close()
-    connection.close()
-
-    return {
-        "success": True,
-        "message": f"Étudiant {student_id} modifié"
-    }
-
-# =====================================================
 # GET /students/archives
-# retourne les étudiants archivés
+# retourne les étudiants archivés (archived = TRUE)
 # =====================================================
 @router.get("/archives")
 def get_archives():
@@ -184,34 +124,9 @@ def get_archives():
 
 
 # =====================================================
-# POST /students/{id}/restore
-# restaurer un étudiant archivé
-# =====================================================
-@router.post("/{student_id}/restore")
-def restore_student(student_id: int):
-
-    connection = get_connection()
-    cursor = connection.cursor()
-
-    cursor.execute("""
-        UPDATE etudiants
-        SET archived = FALSE
-        WHERE id = %s
-    """, (student_id,))
-
-    connection.commit()
-    cursor.close()
-    connection.close()
-
-    return {
-        "success": True,
-        "message": f"Étudiant {student_id} restauré"
-    }
-
-
-# =====================================================
 # GET /students/json-preview
 # retourne les étudiants du JSON pas encore en DB
+# utilisé par la page import.html
 # =====================================================
 @router.get("/json-preview")
 def get_json_preview():
@@ -245,18 +160,19 @@ def get_json_preview():
                 "numero": e["numero"],
                 "nom": e["nom"],
                 "prenom": e["prenom"],
-                "classe": e["classe"]
+                "classe": e["classe"],
+                "code": e.get("code", "JSON_IMPORT")
             }
             for e in non_importes
         ]
     }
 
 
-
-
 # =====================================================
 # GET /students/{id}
-# retourne le détail d'un étudiant avec ses notes
+# détail complet d'un étudiant avec toutes ses notes
+# doit être après /archives et /json-preview
+# sinon FastAPI confond avec /{student_id}
 # =====================================================
 @router.get("/{student_id}")
 def get_student(student_id: int):
@@ -264,7 +180,6 @@ def get_student(student_id: int):
     connection = get_connection()
     cursor = connection.cursor()
 
-    # infos étudiant
     cursor.execute("""
         SELECT 
             e.id,
@@ -285,7 +200,6 @@ def get_student(student_id: int):
     if not etudiant:
         return {"success": False, "message": "Étudiant non trouvé"}
 
-    # notes de l'étudiant
     cursor.execute("""
         SELECT 
             m.nom_matiere,
@@ -299,7 +213,6 @@ def get_student(student_id: int):
     """, (student_id,))
 
     notes = cursor.fetchall()
-
     cursor.close()
     connection.close()
 
@@ -326,13 +239,133 @@ def get_student(student_id: int):
     }
 
 
+# =====================================================
+# POST /students/{id}/restore
+# restaurer un étudiant archivé
+# remet archived = FALSE
+# =====================================================
+@router.post("/{student_id}/restore")
+def restore_student(student_id: int):
+
+    connection = get_connection()
+    cursor = connection.cursor()
+
+    cursor.execute("""
+        UPDATE etudiants
+        SET archived = FALSE
+        WHERE id = %s
+    """, (student_id,))
+
+    connection.commit()
+    cursor.close()
+    connection.close()
+
+    return {
+        "success": True,
+        "message": f"Étudiant {student_id} restauré"
+    }
+
 
 # =====================================================
-# TODO : PUT /students/{id}
+# POST /students/{id}/notes
+# ajouter une note à un étudiant existant
+# utilisé par la page detail.html
+# =====================================================
+@router.post("/{student_id}/notes")
+def add_note(student_id: int, note: dict):
+
+    connection = get_connection()
+    cursor = connection.cursor()
+
+    cursor.execute("""
+        INSERT INTO notes (
+            etudiant_id,
+            matiere_id,
+            nom_evaluation,
+            type_evaluation,
+            valeur
+        )
+        VALUES (
+            %s,
+            (SELECT id FROM matieres WHERE nom_matiere = %s),
+            %s, %s, %s
+        )
+        ON CONFLICT (etudiant_id, matiere_id, nom_evaluation)
+        DO NOTHING
+    """, (
+        student_id,
+        note["matiere"],
+        note["nom_evaluation"],
+        note["type_evaluation"],
+        note["valeur"]
+    ))
+
+    connection.commit()
+    cursor.close()
+    connection.close()
+
+    return {"success": True, "message": "Note ajoutée"}
+
+
+# =====================================================
+# DELETE /students/{id}
+# archivage soft — jamais de suppression physique
+# met archived = TRUE
+# l'étudiant reste en base mais disparaît des listes
+# =====================================================
+@router.delete("/{student_id}")
+def archive_student(student_id: int):
+
+    connection = get_connection()
+    cursor = connection.cursor()
+
+    cursor.execute("""
+        UPDATE etudiants
+        SET archived = TRUE
+        WHERE id = %s
+    """, (student_id,))
+
+    connection.commit()
+    cursor.close()
+    connection.close()
+
+    return {
+        "success": True,
+        "message": f"Étudiant {student_id} archivé"
+    }
+
+
+# =====================================================
+# PUT /students/{id}
 # modification d'un étudiant (DB uniquement)
+# seuls nom, prenom, classe sont modifiables
 # =====================================================
+@router.put("/{student_id}")
+def update_student(student_id: int, student: dict):
 
-# =====================================================
-# TODO : POST /students/import
-# import JSON → PostgreSQL avec détection doublons  
-# =====================================================
+    connection = get_connection()
+    cursor = connection.cursor()
+
+    cursor.execute("""
+        UPDATE etudiants
+        SET 
+            nom = %s,
+            prenom = %s,
+            classe_id = (SELECT id FROM classes WHERE nom_classe = %s)
+        WHERE id = %s
+        AND archived = FALSE
+    """, (
+        student["nom"],
+        student["prenom"],
+        student["classe"],
+        student_id
+    ))
+
+    connection.commit()
+    cursor.close()
+    connection.close()
+
+    return {
+        "success": True,
+        "message": f"Étudiant {student_id} modifié"
+    }

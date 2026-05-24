@@ -53,7 +53,7 @@ document.getElementById("importBtn").addEventListener("click", async () => {
     for (const cb of checkboxes) {
         const etudiant = jsonData[cb.value];
 
-        await fetch("http://127.0.0.1:8000/students", {
+        await fetch("http://127.0.0.1:8000/students/", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({

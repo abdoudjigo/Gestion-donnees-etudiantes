@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Détail Étudiant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">📋 Liste Étudiants</a>
+        <a href="dashboard.html">📊 Dashboard</a>
+        <a href="archives.html">🗄️ Archives</a>
+        <a href="import.html">📥 Import JSON</a>
+    </nav>
+
+    <div class="page">
+        <h1 id="etudiantNom">...</h1>
+        <p id="etudiantInfo"></p>
+
+        <h2>Notes</h2>
+        <div id="notes-container"></div>
+
+        <h2>Ajouter une note</h2>
+        <div class="form-section">
+            <select id="matiere">
+                <option value="Math">Math</option>
+                <option value="Francais">Francais</option>
+                <option value="Anglais">Anglais</option>
+                <option value="PC">PC</option>
+                <option value="SVT">SVT</option>
+                <option value="HG">HG</option>
+            </select>
+            <select id="type_evaluation">
+                <option value="devoir">Devoir</option>
+                <option value="examen">Examen</option>
+            </select>
+            <input id="nom_evaluation" placeholder="ex: Devoir 1 ou Examen">
+            <input id="valeur" type="number" min="0" max="20" placeholder="Note /20">
+            <button id="addNoteBtn">Ajouter la note</button>
+        </div>
+    </div>
+
+    <script src="detail.js"></script>
+</body>
+</html>
