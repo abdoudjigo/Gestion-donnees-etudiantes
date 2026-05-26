@@ -1,26 +1,61 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
-    <title>Archives - Gestion Étudiants</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archives — Gestion Étudiants</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+<body class="bg-gray-50 min-h-screen">
 
-<body>
-
-    <nav>
-        <a href="index.html">📋 Liste Étudiants</a>
-        <a href="dashboard.html">📊 Dashboard</a>
-        <a href="archives.html">🗄️ Archives</a>
-        <a href="import.html">📥 Import JSON</a>
-    </nav>
-    <div class="page"></div>
-        <h1>🗄️ Étudiants Archivés</h1>
-
-        <div id="archives-container"></div>
-
-        <script src="archives.js"></script>
+<!-- Navigation -->
+<nav class="bg-white shadow sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+        <span class="font-bold text-lg text-blue-600">
+            <i class="fas fa-graduation-cap mr-2"></i>Gestion Étudiants
+        </span>
+        <div class="flex gap-2">
+            <a href="index.html"     class="px-3 py-2 rounded text-gray-600 hover:bg-gray-100 text-sm">Liste</a>
+            <a href="dashboard.html" class="px-3 py-2 rounded text-gray-600 hover:bg-gray-100 text-sm">Dashboard</a>
+            <a href="import.html"    class="px-3 py-2 rounded text-gray-600 hover:bg-gray-100 text-sm">Import</a>
+            <a href="archives.html"  class="px-3 py-2 rounded bg-blue-500 text-white text-sm">Archives</a>
+        </div>
     </div>
+</nav>
+
+<div class="max-w-7xl mx-auto px-4 py-6">
+
+    <div class="flex items-center gap-3 mb-6">
+        <h1 class="text-2xl font-bold text-gray-800">
+            <i class="fas fa-archive text-yellow-500 mr-2"></i>
+            Étudiants archivés
+            <!-- Le compteur est mis à jour par archives.js -->
+            <span id="compteurArchives" class="text-gray-400 font-normal text-lg"></span>
+        </h1>
+    </div>
+
+    <p class="text-gray-500 text-sm mb-6">
+        Les étudiants archivés ne sont plus visibles dans la liste principale.
+        Vous pouvez les restaurer à tout moment.
+    </p>
+
+    <!-- La grille est remplie dynamiquement par archives.js -->
+    <!-- L'id "listeArchives" est détecté par archives.js -->
+    <div id="listeArchives"
+         class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+
+        <!-- Spinner initial (remplacé par le JS) -->
+        <div class="col-span-full text-center py-12 text-gray-400">
+            <i class="fas fa-spinner fa-spin text-2xl mb-2"></i>
+            <p>Chargement...</p>
+        </div>
+    </div>
+
+</div>
+
+<!-- api.js d'abord, puis archives.js -->
+<script src="js/api.js"></script>
+<script src="js/archives.js"></script>
 </body>
 </html>

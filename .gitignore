@@ -1,7 +1,21 @@
+# Fichiers Python
 __pycache__/
 *.pyc
 *.pyo
-.env
 venv/
+env/
+.venv/
+
+# Variables d'environnement
+.env
+
+# IDE
 .vscode/
+.idea/
+
+# Logs
 *.log
+
+# Base de données locale
+*.db
+*.sqlite

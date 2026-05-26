@@ -1,57 +1,104 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
-    <title>Dashboard - Gestion Étudiants</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Chart.js depuis CDN -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard — Gestion Étudiants</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Chart.js doit être chargé AVANT dashboard.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="dashboard.js" defer></script>
 </head>
+<body class="bg-gray-50 min-h-screen">
 
-<body>
-    <nav>
-        <a href="index.html">📋 Liste Étudiants</a>
-        <a href="dashboard.html">📊 Dashboard</a>
-        <a href="archives.html">🗄️ Archives</a>
-        <a href="import.html">📥 Import JSON</a>
-    </nav>
-    <div class="page">
-    <h1>📊 Dashboard</h1>
-    <a href="index.html">← Retour à la liste</a>
-
-    <!-- ===================== -->
-    <!-- KPI GLOBAUX           -->
-    <!-- ===================== -->
-    <div id="kpi-container">
-        <div class="kpi-card">
-            <h3>Total Étudiants</h3>
-            <p id="totalEtudiants">...</p>
-        </div>
-        <div class="kpi-card">
-            <h3>Moyenne Générale</h3>
-            <p id="moyenneGenerale">...</p>
-        </div>
-        <div class="kpi-card">
-            <h3>Total Notes</h3>
-            <p id="totalNotes">...</p>
+<!-- Navigation -->
+<nav class="bg-white shadow sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+        <span class="font-bold text-lg text-blue-600">
+            <i class="fas fa-graduation-cap mr-2"></i>Gestion Étudiants
+        </span>
+        <div class="flex gap-2">
+            <a href="index.html"     class="px-3 py-2 rounded text-gray-600 hover:bg-gray-100 text-sm">Liste</a>
+            <a href="dashboard.html" class="px-3 py-2 rounded bg-blue-500 text-white text-sm">Dashboard</a>
+            <a href="import.html"    class="px-3 py-2 rounded text-gray-600 hover:bg-gray-100 text-sm">Import</a>
+            <a href="archives.html"  class="px-3 py-2 rounded text-gray-600 hover:bg-gray-100 text-sm">Archives</a>
         </div>
     </div>
+</nav>
 
-    <!-- ===================== -->
-    <!-- GRAPHIQUE PAR CLASSE  -->
-    <!-- ===================== -->
-    <h2>Moyenne par classe</h2>
-    <canvas id="chartClasses"></canvas>
+<div class="max-w-7xl mx-auto px-4 py-6">
 
-    <!-- ===================== -->
-    <!-- TOP 10                -->
-    <!-- ===================== -->
-    <h2>Top 10 étudiants</h2>
-    <canvas id="chartTop10"></canvas>
+    <h1 class="text-2xl font-bold text-gray-800 mb-6">
+        <i class="fas fa-chart-pie text-blue-500 mr-2"></i>Tableau de bord
+    </h1>
 
-    
+    <!-- ── KPI : 4 cartes ── -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+
+        <div class="bg-white rounded-xl shadow p-5">
+            <p class="text-xs text-gray-500 uppercase tracking-wide mb-1">Total étudiants</p>
+            <p id="kpi-total" class="text-3xl font-bold text-gray-800">
+                <i class="fas fa-spinner fa-spin text-gray-300"></i>
+            </p>
+        </div>
+
+        <div class="bg-white rounded-xl shadow p-5">
+            <p class="text-xs text-gray-500 uppercase tracking-wide mb-1">En base (DB)</p>
+            <p id="kpi-db" class="text-3xl font-bold text-green-600">
+                <i class="fas fa-spinner fa-spin text-gray-300"></i>
+            </p>
+        </div>
+
+        <div class="bg-white rounded-xl shadow p-5">
+            <p class="text-xs text-gray-500 uppercase tracking-wide mb-1">Archivés</p>
+            <p id="kpi-archives" class="text-3xl font-bold text-yellow-500">
+                <i class="fas fa-spinner fa-spin text-gray-300"></i>
+            </p>
+        </div>
+
+        <div class="bg-white rounded-xl shadow p-5">
+            <p class="text-xs text-gray-500 uppercase tracking-wide mb-1">Moyenne générale</p>
+            <!-- La couleur est appliquée dynamiquement par dashboard.js -->
+            <p id="kpi-moyenne" class="text-3xl font-bold text-gray-800">
+                <i class="fas fa-spinner fa-spin text-gray-300"></i>
+            </p>
+        </div>
+
     </div>
+
+    <!-- ── Graphiques ── -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+
+        <!-- Moyenne par classe (occupe 2/3) -->
+        <div class="lg:col-span-2 bg-white rounded-xl shadow p-5">
+            <h2 class="font-bold text-gray-700 mb-4">
+                <i class="fas fa-school mr-1 text-blue-400"></i>Moyenne par classe
+            </h2>
+            <canvas id="graphiqueClasses" height="120"></canvas>
+        </div>
+
+        <!-- Répartition Actifs / Archivés (1/3) -->
+        <div class="bg-white rounded-xl shadow p-5">
+            <h2 class="font-bold text-gray-700 mb-4">
+                <i class="fas fa-database mr-1 text-purple-400"></i>Actifs / Archivés
+            </h2>
+            <canvas id="graphiqueSource" height="120"></canvas>
+        </div>
+
+    </div>
+
+    <!-- Top 10 -->
+    <div class="bg-white rounded-xl shadow p-5">
+        <h2 class="font-bold text-gray-700 mb-4">
+            <i class="fas fa-trophy mr-1 text-yellow-500"></i>Top 10 — meilleures moyennes
+        </h2>
+        <canvas id="graphiqueTop10" height="80"></canvas>
+    </div>
+
+</div>
+
+<!-- api.js d'abord, puis dashboard.js -->
+<script src="js/api.js"></script>
+<script src="js/dashboard.js"></script>
 </body>
 </html>
