@@ -1,21 +1,14 @@
-# Fichiers Python
+# Environnement virtuel
+venv/
+
+# Cache Python — généré automatiquement
 __pycache__/
 *.pyc
 *.pyo
-venv/
-env/
-.venv/
 
 # Variables d'environnement
 .env
 
-# IDE
-.vscode/
-.idea/
-
-# Logs
-*.log
-
-# Base de données locale
-*.db
-*.sqlite
+# Fichiers système
+.DS_Store
+*.logbackend/app/config.py

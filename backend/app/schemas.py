@@ -1,90 +1,105 @@
 """
-schemas.py - Modèles Pydantic (validation entrées + sérialisation sorties)
+schemas.py — Validation Pydantic
+Règles assouplies pour correspondre aux vraies données du JSON
 """
 from pydantic import BaseModel, field_validator
 from typing import Optional, List
 import re
 
-# ── Regex de validation ──────────────────────────────────────
+# ── Regex ────────────────────────────────────────────────────
+# Code : 3 lettres + 3 chiffres (insensible à la casse)
 RE_CODE   = re.compile(r'^[A-Za-z]{3}[0-9]{3}$')
+# Numéro : exactement 7 caractères alphanumériques
 RE_NUMERO = re.compile(r'^[A-Za-z0-9]{7}$')
-RE_NOM    = re.compile(r'^[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ\s\-]{1,}$')
 
 
 # ── Sous-modèles ─────────────────────────────────────────────
 
 class NoteInput(BaseModel):
-    """Une note de devoir ou d'examen saisie par l'utilisateur."""
     valeur: float
-    nom: Optional[str] = "Devoir"
+    nom:    Optional[str] = "Devoir"
 
     @field_validator('valeur')
     @classmethod
     def valider_valeur(cls, v):
         if not (0 <= v <= 20):
-            raise ValueError("Une note doit être entre 0 et 20")
-        return round(v, 2)
+            raise ValueError(f"Note {v} invalide — doit être entre 0 et 20")
+        return round(float(v), 2)
 
 
 class MatiereInput(BaseModel):
-    """Une matière avec ses notes de devoir et son examen."""
-    nom_matiere: str
+    nom_matiere:  str
     notes_devoir: List[NoteInput] = []
-    note_examen: Optional[float] = None
+    note_examen:  Optional[float] = None
 
     @field_validator('note_examen')
     @classmethod
     def valider_examen(cls, v):
-        if v is not None and not (0 <= v <= 20):
-            raise ValueError("La note d'examen doit être entre 0 et 20")
-        return round(v, 2) if v is not None else None
+        if v is not None:
+            if not (0 <= v <= 20):
+                raise ValueError(f"Examen {v} invalide — doit être entre 0 et 20")
+            return round(float(v), 2)
+        return v
 
 
-# ── Étudiant : création ──────────────────────────────────────
+# ── Création étudiant ────────────────────────────────────────
 
 class EtudiantCreation(BaseModel):
-    """Données pour créer un étudiant (avec ses matières et notes)."""
     code:           str
     numero:         str
     nom:            str
     prenom:         str
-    date_naissance: str = "2000-01-01"
+    date_naissance: Optional[str] = "2000-01-01"
     classe:         str
     matieres:       List[MatiereInput] = []
 
     @field_validator('code')
     @classmethod
     def valider_code(cls, v):
-        if not RE_CODE.match(v.strip()):
-            raise ValueError(f"Code invalide '{v}' — attendu : 3 lettres + 3 chiffres (ex: AAD004)")
-        return v.strip().upper()
+        v = v.strip()
+        if not RE_CODE.match(v):
+            raise ValueError(
+                f"Code '{v}' invalide — format attendu : 3 lettres + 3 chiffres (ex: AAD004)"
+            )
+        return v.upper()
 
     @field_validator('numero')
     @classmethod
     def valider_numero(cls, v):
-        if not RE_NUMERO.match(v.strip()):
-            raise ValueError(f"Numéro invalide '{v}' — attendu : 7 caractères alphanumériques")
-        return v.strip().upper()
+        v = v.strip()
+        if not RE_NUMERO.match(v):
+            raise ValueError(
+                f"Numéro '{v}' invalide — 7 caractères alphanumériques exactement (ex: 40DKG6T)"
+            )
+        return v.upper()
 
     @field_validator('nom')
     @classmethod
     def valider_nom(cls, v):
-        if not RE_NOM.match(v.strip()):
-            raise ValueError(f"Nom invalide '{v}'")
-        return v.strip().upper()
+        v = v.strip()
+        if len(v) < 2:
+            raise ValueError("Le nom doit contenir au moins 2 caractères")
+        return v.upper()
 
     @field_validator('prenom')
     @classmethod
     def valider_prenom(cls, v):
-        if not RE_NOM.match(v.strip()):
-            raise ValueError(f"Prénom invalide '{v}'")
-        return v.strip().capitalize()
+        v = v.strip()
+        if len(v) < 2:
+            raise ValueError("Le prénom doit contenir au moins 2 caractères")
+        return v.capitalize()
+
+    @field_validator('classe')
+    @classmethod
+    def valider_classe(cls, v):
+        if not v or not v.strip():
+            raise ValueError("La classe est obligatoire")
+        return v.strip()
 
 
-# ── Étudiant : modification ──────────────────────────────────
+# ── Modification étudiant ────────────────────────────────────
 
 class EtudiantModification(BaseModel):
-    """Tous les champs sont optionnels — on envoie seulement ce qui change."""
     code:           Optional[str] = None
     numero:         Optional[str] = None
     nom:            Optional[str] = None
@@ -95,16 +110,22 @@ class EtudiantModification(BaseModel):
     @field_validator('code')
     @classmethod
     def valider_code(cls, v):
-        if v and not RE_CODE.match(v.strip()):
-            raise ValueError(f"Code invalide '{v}'")
-        return v.strip().upper() if v else v
+        if v:
+            v = v.strip()
+            if not RE_CODE.match(v):
+                raise ValueError(f"Code '{v}' invalide — 3 lettres + 3 chiffres")
+            return v.upper()
+        return v
 
     @field_validator('numero')
     @classmethod
     def valider_numero(cls, v):
-        if v and not RE_NUMERO.match(v.strip()):
-            raise ValueError(f"Numéro invalide '{v}'")
-        return v.strip().upper() if v else v
+        if v:
+            v = v.strip()
+            if not RE_NUMERO.match(v):
+                raise ValueError(f"Numéro '{v}' invalide — 7 caractères")
+            return v.upper()
+        return v
 
     @field_validator('nom')
     @classmethod
@@ -117,13 +138,12 @@ class EtudiantModification(BaseModel):
         return v.strip().capitalize() if v else v
 
 
-# ── Notes : ajout / modification ────────────────────────────
+# ── Note ─────────────────────────────────────────────────────
 
 class NoteModification(BaseModel):
-    """Pour ajouter ou modifier une note depuis la fiche étudiant."""
     nom_matiere:     str
     nom_evaluation:  str
-    type_evaluation: str   # 'devoir' | 'examen'
+    type_evaluation: str
     valeur:          float
 
     @field_validator('type_evaluation')
@@ -138,7 +158,7 @@ class NoteModification(BaseModel):
     def valider_valeur(cls, v):
         if not (0 <= v <= 20):
             raise ValueError("Note entre 0 et 20")
-        return round(v, 2)
+        return round(float(v), 2)
 
 
 # ── Import JSON ──────────────────────────────────────────────
