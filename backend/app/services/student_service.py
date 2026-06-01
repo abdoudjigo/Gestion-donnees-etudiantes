@@ -94,6 +94,8 @@ def _formater_db(row) -> dict:
     }
 
 
+# Remplacer l'ancienne par celle-ci dans student_service.py
+
 def _formater_json(e: dict) -> dict:
     return {
         "id":             None,
@@ -105,6 +107,9 @@ def _formater_json(e: dict) -> dict:
         "classe":         e.get('classe', ''),
         "source":         "JSON",
         "editable":       False,
+        # ── AJOUT : on transmet les notes brutes pour que
+        # le frontend puisse calculer la moyenne ──────────
+        "notes_raw":      e.get('notes', ''),
     }
 
 

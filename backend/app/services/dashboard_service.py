@@ -183,7 +183,7 @@ def get_repartition_source() -> dict:
     row = executer_requete(
         """SELECT
                SUM(CASE WHEN source = 'DB'   THEN 1 ELSE 0 END) AS nb_db,
-               COUNT(*)                                           AS total
+               COUNT(*) AS total
            FROM etudiants WHERE archived = FALSE""",
         une_ligne=True
     )
