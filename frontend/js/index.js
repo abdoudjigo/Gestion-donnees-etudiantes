@@ -19,38 +19,54 @@ let page  = 1;   // page courante
 let limit = 10;  // nombre de lignes par page
 let total = 0;   // total d'étudiants (pour calculer le nb de pages)
 
+let listeMatieres = [];
+
+
 // ── Démarrage : quand le HTML est complètement chargé ────────
 document.addEventListener('DOMContentLoaded', async () => {
-
-    // 1. Charger les classes dans les selects (filtres + formulaire)
+ 
+    // Charger les classes dans les selects (filtres + formulaire)
     await chargerClasses();
-
-    // 2. Charger la première page d'étudiants
+ 
+    // Charger les matières disponibles depuis la DB
+    // (stockées dans listeMatieres pour les selects du formulaire)
+    await chargerMatieres();
+ 
+    // Charger et afficher la première page d'étudiants
     await chargerEtudiants();
-
-    // 3. Attacher les événements aux filtres
+ 
+    // Événements des filtres — rechargent depuis la page 1
     document.getElementById('searchInput')
         .addEventListener('input', () => { page = 1; chargerEtudiants(); });
-
     document.getElementById('sourceFilter')
         .addEventListener('change', () => { page = 1; chargerEtudiants(); });
-
     document.getElementById('classeFilter')
         .addEventListener('change', () => { page = 1; chargerEtudiants(); });
-
     document.getElementById('limitSelect')
         .addEventListener('change', () => {
             limit = parseInt(document.getElementById('limitSelect').value);
             page  = 1;
             chargerEtudiants();
         });
-
-    // 4. Fermer la modale si on clique en dehors
+ 
+    // Fermer la modale si on clique en dehors du cadre blanc
     document.getElementById('modaleEdit')
         .addEventListener('click', function(e) {
             if (e.target === this) fermerModale();
         });
 });
+
+/**
+ * Charge la liste des matières depuis l'API.
+ * Appelée une seule fois au démarrage.
+ * Résultat stocké dans listeMatieres (variable globale).
+ */
+async function chargerMatieres() {
+    const res = await getMatieres();
+    if (res.success && res.data) {
+        listeMatieres = res.data; // ex: [{ id:1, nom:"Math" }, ...]
+    }
+}
 
 // ═══════════════════════════════════════════════════════════════
 // SECTION 1 — CLASSES (remplir les selects)
@@ -598,68 +614,89 @@ function toggleForm() {
 }
 
 /**
- * Ajoute un bloc "matière + notes" dans le formulaire d'ajout.
- * Chaque bloc a un ID unique basé sur compteurMatieres.
+ * Ajoute un bloc matière dans le formulaire d'ajout.
+ *
+ * Chaque bloc contient :
+ *  - un select pour choisir la matière (options chargées depuis la DB)
+ *  - un input pour la note d'examen
+ *  - une zone pour ajouter des notes de devoir
+ *  - un aperçu de la moyenne calculée en temps réel
  */
 function ajouterLigneMatiere() {
     const id  = ++compteurMatieres;
     const div = document.createElement('div');
-    div.id    = `mat-${id}`;
+    div.id        = `mat-${id}`;
     div.className = 'border rounded-lg p-4 bg-gray-50 relative';
-
+ 
+    // Construire les <option> du select depuis listeMatieres
+    const options = listeMatieres.map(m =>
+        `<option value="${m.nom}">${m.nom}</option>`
+    ).join('');
+ 
     div.innerHTML = `
+ 
         <!-- Bouton supprimer ce bloc matière -->
         <button onclick="document.getElementById('mat-${id}').remove()"
                 class="absolute top-2 right-2 text-red-400 hover:text-red-600 text-xs"
                 title="Supprimer cette matière">
             <i class="fas fa-trash"></i>
         </button>
-
+ 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
-            <!-- Nom de la matière -->
+ 
+            <!-- Select matière — options viennent de la table matieres en DB -->
             <div>
                 <label class="text-xs font-semibold text-gray-600 mb-1 block">
-                    Matière *
+                    Matière <span class="text-red-400">*</span>
                 </label>
-                <input id="mat-nom-${id}" type="text" placeholder="ex: Math"
-                       class="w-full border rounded px-3 py-1.5 text-sm
-                              focus:outline-none focus:ring-2 focus:ring-blue-300">
+                <select id="mat-nom-${id}"
+                        class="w-full border rounded px-3 py-1.5 text-sm bg-white
+                               focus:outline-none focus:ring-2 focus:ring-blue-300">
+                    <option value="">-- Choisir une matière --</option>
+                    ${options}
+                </select>
             </div>
+ 
             <!-- Note d'examen -->
             <div>
                 <label class="text-xs font-semibold text-gray-600 mb-1 block">
                     Note d'examen (0–20)
                 </label>
-                <input id="mat-examen-${id}" type="number"
-                       min="0" max="20" step="0.25" placeholder="ex: 14"
+                <input id="mat-examen-${id}"
+                       type="number" min="0" max="20" step="0.25"
+                       placeholder="ex: 14"
                        class="w-full border rounded px-3 py-1.5 text-sm
                               focus:outline-none focus:ring-2 focus:ring-blue-300"
                        oninput="previewMoyenne(${id})">
             </div>
         </div>
-
-        <!-- Section devoirs -->
+ 
+        <!-- Zone devoirs -->
         <div>
             <div class="flex justify-between items-center mb-2">
-                <label class="text-xs font-semibold text-gray-600">Notes de devoir</label>
+                <label class="text-xs font-semibold text-gray-600">
+                    Notes de devoir
+                </label>
                 <button onclick="ajouterDevoir(${id})"
                         class="text-xs text-blue-600 border border-blue-200
-                               rounded px-2 py-1 hover:bg-blue-50">
-                    <i class="fas fa-plus mr-1"></i>Ajouter devoir
+                               rounded px-2 py-1 hover:bg-blue-50 transition">
+                    <i class="fas fa-plus mr-1"></i>Ajouter un devoir
                 </button>
             </div>
+            <!-- Lignes de devoirs injectées par ajouterDevoir() -->
             <div id="devoirs-${id}" class="space-y-2"></div>
         </div>
-
-        <!-- Aperçu de la moyenne en temps réel -->
+ 
+        <!-- Aperçu de la moyenne calculée en direct -->
         <div class="mt-3 text-xs text-gray-400 border-t pt-2">
             Formule : (moy. devoirs + examen) / 2 =
             <span id="preview-moy-${id}" class="font-bold text-blue-500">—</span>
         </div>
     `;
-
+ 
     document.getElementById('matieresContainer').appendChild(div);
 }
+
 
 /**
  * Ajoute un champ de note de devoir dans un bloc matière.
