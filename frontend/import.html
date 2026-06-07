@@ -26,40 +26,40 @@
 
 <div class="max-w-4xl mx-auto px-4 py-6">
 
-    <h1 class="text-2xl font-bold text-gray-800 mb-2">
-        <i class="fas fa-file-import text-blue-500 mr-2"></i>Import JSON → Base de données
-    </h1>
-    <p class="text-gray-500 text-sm mb-6">
-        Sélectionnez les étudiants du fichier <code class="bg-gray-100 px-1 rounded">valides.json</code>
-        à importer en base. Les doublons sont automatiquement ignorés.
-    </p>
-
-    <!-- Message d'état (chargement / info / erreur) -->
-    <!-- Rempli dynamiquement par import.js -->
-    <div id="infoMessage"
-         class="bg-blue-50 border border-blue-200 text-blue-700 px-4 py-3 rounded-lg mb-4">
-        <i class="fas fa-spinner fa-spin mr-2"></i>Chargement...
+    <div class="mb-6">
+        <h1 class="text-2xl font-bold text-gray-800">
+            <i class="fas fa-file-import text-blue-500 mr-2"></i>Import JSON
+        </h1>
+        <p class="text-gray-500 text-sm mt-1">
+            On va chercher les étudiants dans <code class="bg-gray-100 px-1 rounded">valides.json</code>
+            et on les ajoute à la base. Si y'a des doublons, on les ignore.
+        </p>
     </div>
 
-    <!-- Liste des étudiants à importer -->
-    <!-- Remplie dynamiquement par import.js -->
+    <!-- Le message qui change selon ce qui se passe -->
+    <div id="infoMessage"
+         class="bg-blue-50 border border-blue-200 text-blue-700 px-4 py-3 rounded-lg mb-4">
+        <i class="fas fa-spinner fa-spin mr-2"></i>Un petit moment, je charge le fichier...
+    </div>
+
+    <!-- La liste des étudiants trouvés dans le JSON -->
     <div id="listeEtudiants" class="space-y-2 mb-6"></div>
 
-    <!-- Bouton d'import (caché jusqu'au chargement) -->
+    <!-- Le bouton pour importer (caché tant qu'on a pas chargé) -->
     <div id="zoneBouton" class="hidden mb-6">
         <button id="btnImporter"
                 class="bg-green-500 hover:bg-green-600 text-white px-6 py-3
                        rounded-lg font-semibold shadow transition">
-            <i class="fas fa-database mr-2"></i>Importer la sélection
+            <i class="fas fa-database mr-2"></i>Importer ceux qu'on a coché
         </button>
     </div>
 
-    <!-- Message "tout est déjà importé" (caché par défaut) -->
+    <!-- Au cas où tout est déjà en base -->
     <div id="messageVide" class="hidden text-center py-16 bg-white rounded-xl shadow">
         <i class="fas fa-check-circle text-green-500 text-5xl mb-4"></i>
-        <p class="text-gray-600 text-lg font-medium">Tout est à jour !</p>
+        <p class="text-gray-600 text-lg font-medium">Rien à faire !</p>
         <p class="text-gray-400 text-sm mt-1">
-            Tous les étudiants du fichier JSON sont déjà en base de données.
+            Tous les étudiants du fichier JSON sont déjà dans la base.
         </p>
         <a href="index.html"
            class="inline-block mt-4 text-blue-500 hover:underline text-sm">
@@ -69,7 +69,6 @@
 
 </div>
 
-<!-- api.js d'abord, puis import.js -->
 <script src="js/api.js"></script>
 <script src="js/import.js"></script>
 </body>

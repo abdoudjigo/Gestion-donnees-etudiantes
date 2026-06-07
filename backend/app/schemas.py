@@ -19,7 +19,7 @@ class NoteInput(BaseModel):
     valeur: float
     nom:    Optional[str] = "Devoir"
 
-    @field_validator('valeur')
+    @field_validator('valeur')      
     @classmethod
     def valider_valeur(cls, v):
         if not (0 <= v <= 20):

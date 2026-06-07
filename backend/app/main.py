@@ -45,3 +45,4 @@ async def health():
         conn.close()
         return {"status": "ok", "db": "connectée"}
     return {"status": "ok", "db": "ERREUR — vérifiez config.py"}
+

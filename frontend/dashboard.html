@@ -6,7 +6,6 @@
     <title>Dashboard — Gestion Étudiants</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Chart.js doit être chargé AVANT dashboard.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body class="bg-gray-50 min-h-screen">
@@ -28,37 +27,39 @@
 
 <div class="max-w-7xl mx-auto px-4 py-6">
 
-    <h1 class="text-2xl font-bold text-gray-800 mb-6">
-        <i class="fas fa-chart-pie text-blue-500 mr-2"></i>Tableau de bord
-    </h1>
+    <div class="mb-6">
+        <h1 class="text-2xl font-bold text-gray-800">
+            <i class="fas fa-chart-pie text-blue-500 mr-2"></i>Dashboard
+        </h1>
+        <p class="text-gray-500 text-sm mt-1">Un petit aperçu de ce qui se passe dans la base</p>
+    </div>
 
-    <!-- ── KPI : 4 cartes ── -->
+    <!-- 4 cartes avec les chiffres clés -->
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
 
-        <div class="bg-white rounded-xl shadow p-5">
+        <div class="bg-white rounded-xl shadow p-5 hover:shadow-md transition">
             <p class="text-xs text-gray-500 uppercase tracking-wide mb-1">Total étudiants</p>
             <p id="kpi-total" class="text-3xl font-bold text-gray-800">
                 <i class="fas fa-spinner fa-spin text-gray-300"></i>
             </p>
         </div>
 
-        <div class="bg-white rounded-xl shadow p-5">
+        <div class="bg-white rounded-xl shadow p-5 hover:shadow-md transition">
             <p class="text-xs text-gray-500 uppercase tracking-wide mb-1">En base (DB)</p>
             <p id="kpi-db" class="text-3xl font-bold text-green-600">
                 <i class="fas fa-spinner fa-spin text-gray-300"></i>
             </p>
         </div>
 
-        <div class="bg-white rounded-xl shadow p-5">
+        <div class="bg-white rounded-xl shadow p-5 hover:shadow-md transition">
             <p class="text-xs text-gray-500 uppercase tracking-wide mb-1">Archivés</p>
             <p id="kpi-archives" class="text-3xl font-bold text-yellow-500">
                 <i class="fas fa-spinner fa-spin text-gray-300"></i>
             </p>
         </div>
 
-        <div class="bg-white rounded-xl shadow p-5">
+        <div class="bg-white rounded-xl shadow p-5 hover:shadow-md transition">
             <p class="text-xs text-gray-500 uppercase tracking-wide mb-1">Moyenne générale</p>
-            <!-- La couleur est appliquée dynamiquement par dashboard.js -->
             <p id="kpi-moyenne" class="text-3xl font-bold text-gray-800">
                 <i class="fas fa-spinner fa-spin text-gray-300"></i>
             </p>
@@ -66,38 +67,48 @@
 
     </div>
 
-    <!-- ── Graphiques ── -->
+    <!-- Graphiques -->
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
 
-        <!-- Moyenne par classe (occupe 2/3) -->
         <div class="lg:col-span-2 bg-white rounded-xl shadow p-5">
-            <h2 class="font-bold text-gray-700 mb-4">
-                <i class="fas fa-school mr-1 text-blue-400"></i>Moyenne par classe
-            </h2>
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="font-bold text-gray-700">
+                    <i class="fas fa-school mr-1 text-blue-400"></i>Moyenne par classe
+                </h2>
+                <span class="text-xs text-gray-400">basé sur les étudiants actifs</span>
+            </div>
             <canvas id="graphiqueClasses" height="120"></canvas>
         </div>
 
-        <!-- Répartition Actifs / Archivés (1/3) -->
         <div class="bg-white rounded-xl shadow p-5">
             <h2 class="font-bold text-gray-700 mb-4">
-                <i class="fas fa-database mr-1 text-purple-400"></i>Actifs / Archivés
+                <i class="fas fa-database mr-1 text-purple-400"></i>Actifs vs Archivés
             </h2>
             <canvas id="graphiqueSource" height="120"></canvas>
+            <p class="text-xs text-gray-400 text-center mt-3">Ceux en DB vs ceux dans les archives</p>
         </div>
 
     </div>
 
     <!-- Top 10 -->
     <div class="bg-white rounded-xl shadow p-5">
-        <h2 class="font-bold text-gray-700 mb-4">
-            <i class="fas fa-trophy mr-1 text-yellow-500"></i>Top 10 — meilleures moyennes
-        </h2>
+        <div class="flex justify-between items-center mb-4">
+            <h2 class="font-bold text-gray-700">
+                <i class="fas fa-trophy mr-1 text-yellow-500"></i>Top 10 des meilleures moyennes
+            </h2>
+            <span class="text-xs text-gray-400">les cracks</span>
+        </div>
         <canvas id="graphiqueTop10" height="80"></canvas>
+        <p class="text-xs text-gray-400 text-center mt-3">moyenne générale par étudiant</p>
+    </div>
+
+    <!-- Petit footer informatif -->
+    <div class="mt-6 text-center text-xs text-gray-400 border-t pt-4">
+        <i class="fas fa-chart-line mr-1"></i> Les chiffres se mettent à jour automatiquement
     </div>
 
 </div>
 
-<!-- api.js d'abord, puis dashboard.js -->
 <script src="js/api.js"></script>
 <script src="js/dashboard.js"></script>
 </body>
